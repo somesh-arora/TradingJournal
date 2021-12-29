@@ -15,22 +15,22 @@ struct OptionTradeView: View {
     @State private var showDetailView: Bool = false
     
     var body: some View {
-        ZStack(alignment: .bottomTrailing) {
-            VStack(spacing: 0) {
-                headerView
-                if viewModel.optionTrades.isEmpty {
-                    emptyView
-                } else {
-                    optionTradeList
-                }
+        VStack(spacing: 10) {
+            headerView
+            if viewModel.optionTrades.isEmpty {
+                emptyView
+            } else {
+                optionTradeList
             }
         }
-        .ignoresSafeArea(.all, edges: .top)
+        .padding()
         .background(
             NavigationLink(destination: OptionDetailLoadingView(optionEntity: $selectedOptionTrade),
                            isActive: $showDetailView,
                            label: { EmptyView() })
         )
+        .navigationBarHidden(true)
+        .navigationTitle("")
     }
     
     private var headerView: some View {
@@ -42,8 +42,6 @@ struct OptionTradeView: View {
             
             Spacer(minLength: 0)
         }
-        .padding(.vertical)
-        .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.top)
     }
     
     private var emptyView: some View {
@@ -62,7 +60,9 @@ struct OptionTradeView: View {
             LazyVStack(alignment: .leading, spacing: 8) {
                 ForEach(viewModel.optionTrades) { optionTrade in
                     OptionTradeRowView(optionTrade: optionTrade)
-                        .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+                        .padding(5)
+                        .background(Color.white)
+                        .cornerRadius(18)
                         .onTapGesture {
                             segue(optionTrade: optionTrade)
                         }

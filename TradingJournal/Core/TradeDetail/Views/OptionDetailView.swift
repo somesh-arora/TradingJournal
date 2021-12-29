@@ -56,20 +56,7 @@ struct OptionDetailView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                Button(action: { showActionSheet.toggle() }) {
-                    Image(systemName: "ellipsis")
-                }
-                .confirmationDialog("Perform Action", isPresented: $showActionSheet, titleVisibility: .visible) {
-                    Button("Edit") {
-                        editTrade()
-                    }
-                    Button("Delete", role: .destructive) {
-                        deleteTrade()
-                    }
-                    Button("Close Position") {
-                        closeTrade()
-                    }
-                }
+                tradeActionView
             }
         }
     }
@@ -89,6 +76,24 @@ struct OptionDetailView: View {
             ForEach(viewModel.statistics) { stat in
                 StatisticView(stat: stat)
             }
+        }
+    }
+    
+    private var tradeActionView: some View {
+        Menu {
+            Button("Close Position") {
+                closeTrade()
+            }
+            Button("Delete Position") {
+                deleteTrade()
+            }
+            Button("Edit Position") {
+                editTrade()
+            }
+        } label: {
+            Image(systemName: "ellipsis")
+                .frame(width: 18, height: 18)
+                .foregroundColor(.primary)
         }
     }
     

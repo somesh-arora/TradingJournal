@@ -143,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				BB22E190277BEDC0005853F2 /* TabBar */,
+				BB22E198277C04DF005853F2 /* TradeDetail */,
 				BB0316B52778116A00FB108B /* ViewModels */,
 				BB0316B42778114E00FB108B /* Views */,
 			);
@@ -155,7 +156,6 @@
 				BB0316B62778118800FB108B /* OptionTradeRowView.swift */,
 				BB0316C0277838A800FB108B /* OptionTradeView.swift */,
 				BB0316C227783BEA00FB108B /* AddNewOptionView.swift */,
-				BB0316C4277850BD00FB108B /* OptionDetailView.swift */,
 				BB0316CE2779812100FB108B /* CloseTradeView.swift */,
 				BB0316C6277852C500FB108B /* StatisticView.swift */,
 			);
@@ -166,7 +166,6 @@
 			isa = PBXGroup;
 			children = (
 				BB0316B8277811B400FB108B /* OptionTradeViewModel.swift */,
-				BB0316CA277853A000FB108B /* OptionDetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -194,6 +193,31 @@
 				BB22E196277BEFAC005853F2 /* BackgroundModifier.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		BB22E198277C04DF005853F2 /* TradeDetail */ = {
+			isa = PBXGroup;
+			children = (
+				BB22E19A277C050E005853F2 /* ViewModels */,
+				BB22E199277C0507005853F2 /* Views */,
+			);
+			path = TradeDetail;
+			sourceTree = "<group>";
+		};
+		BB22E199277C0507005853F2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BB0316C4277850BD00FB108B /* OptionDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BB22E19A277C050E005853F2 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				BB0316CA277853A000FB108B /* OptionDetailViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
