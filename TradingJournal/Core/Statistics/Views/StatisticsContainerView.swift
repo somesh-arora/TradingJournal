@@ -25,7 +25,6 @@ struct StatisticsContainerView: View {
             Text("Statistics")
                 .font(.largeTitle)
                 .fontWeight(.heavy)
-                .foregroundColor(Color.theme.accent)
             
             Spacer(minLength: 0)
         }
@@ -35,6 +34,9 @@ struct StatisticsContainerView: View {
     private var statisticsView: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack {
+                // stats grid
+                StatsGridView(stats: viewModel.statsData)
+                
                 // statistics grid
                 CircularProgressGridView(data: viewModel.circularProgressData)
             }

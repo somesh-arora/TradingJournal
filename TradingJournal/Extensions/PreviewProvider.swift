@@ -48,7 +48,12 @@ class DeveloperPreview {
         return item
     }()
     
-    let statistic1 = StatisticModel(title: "Market Cap", value: "$12.5Bn", percentageChange: 25.23)
-    let statistic2 = StatisticModel(title: "Total Volume", value: "$1.234Tn")
-    let statistic3 = StatisticModel(title: "Portfolio Value", value: "$12.24k", percentageChange: -12.34)
+    let stat1 = StatsModel(title: "Most Profitable Trade", value: "$10,252")
+    let stat2 = StatsModel(title: "Total Trades", value: "234")
+    let stat3 = StatsModel(title: "Average Amount Per Trade", value: "$10.23")
+    let stat4 = StatsModel(title: "Win Percentage", value: "69.3%")
+    
+    let statistic1 = StatsModel(title: "Market Cap", value: "$12.5Bn", percentageChange: 25.23)
+    let statistic2 = StatsModel(title: "Total Volume", value: "$1.234Tn")
+    let statistic3 = StatsModel(title: "Portfolio Value", value: "$12.24k", percentageChange: -12.34)
 }

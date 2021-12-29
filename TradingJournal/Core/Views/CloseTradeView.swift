@@ -31,7 +31,6 @@ struct CloseTradeView: View {
                 Text("Close Position")
                     .font(.title)
                     .fontWeight(.heavy)
-                    .foregroundColor(Color.theme.accent)
                 
                 Spacer(minLength: 0)
             }

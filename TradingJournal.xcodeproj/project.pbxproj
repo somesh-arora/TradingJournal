@@ -21,8 +21,6 @@
 		BB0316C1277838A800FB108B /* OptionTradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0316C0277838A800FB108B /* OptionTradeView.swift */; };
 		BB0316C327783BEA00FB108B /* AddNewOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0316C227783BEA00FB108B /* AddNewOptionView.swift */; };
 		BB0316C5277850BD00FB108B /* OptionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0316C4277850BD00FB108B /* OptionDetailView.swift */; };
-		BB0316C7277852C500FB108B /* StatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0316C6277852C500FB108B /* StatisticView.swift */; };
-		BB0316C9277852FA00FB108B /* StatisticModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0316C8277852FA00FB108B /* StatisticModel.swift */; };
 		BB0316CB277853A000FB108B /* OptionDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0316CA277853A000FB108B /* OptionDetailViewModel.swift */; };
 		BB0316CD27797AEA00FB108B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0316CC27797AEA00FB108B /* Color.swift */; };
 		BB0316CF2779812100FB108B /* CloseTradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0316CE2779812100FB108B /* CloseTradeView.swift */; };
@@ -35,6 +33,9 @@
 		BB22E1A6277C0AAC005853F2 /* CircularProgressGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB22E1A5277C0AAC005853F2 /* CircularProgressGridView.swift */; };
 		BB22E1AC277C0C52005853F2 /* StatisticsContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB22E1AB277C0C52005853F2 /* StatisticsContainerView.swift */; };
 		BB22E1AE277C0CD7005853F2 /* StatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB22E1AD277C0CD7005853F2 /* StatisticsViewModel.swift */; };
+		BB22E1B3277C13CF005853F2 /* StatsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB22E1B2277C13CF005853F2 /* StatsModel.swift */; };
+		BB22E1B5277C146E005853F2 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB22E1B4277C146E005853F2 /* StatsView.swift */; };
+		BB22E1B7277C15AE005853F2 /* StatsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB22E1B6277C15AE005853F2 /* StatsGridView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,8 +54,6 @@
 		BB0316C0277838A800FB108B /* OptionTradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionTradeView.swift; sourceTree = "<group>"; };
 		BB0316C227783BEA00FB108B /* AddNewOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewOptionView.swift; sourceTree = "<group>"; };
 		BB0316C4277850BD00FB108B /* OptionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionDetailView.swift; sourceTree = "<group>"; };
-		BB0316C6277852C500FB108B /* StatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticView.swift; sourceTree = "<group>"; };
-		BB0316C8277852FA00FB108B /* StatisticModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticModel.swift; sourceTree = "<group>"; };
 		BB0316CA277853A000FB108B /* OptionDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionDetailViewModel.swift; sourceTree = "<group>"; };
 		BB0316CC27797AEA00FB108B /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		BB0316CE2779812100FB108B /* CloseTradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseTradeView.swift; sourceTree = "<group>"; };
@@ -67,6 +66,9 @@
 		BB22E1A5277C0AAC005853F2 /* CircularProgressGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressGridView.swift; sourceTree = "<group>"; };
 		BB22E1AB277C0C52005853F2 /* StatisticsContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsContainerView.swift; sourceTree = "<group>"; };
 		BB22E1AD277C0CD7005853F2 /* StatisticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewModel.swift; sourceTree = "<group>"; };
+		BB22E1B2277C13CF005853F2 /* StatsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsModel.swift; sourceTree = "<group>"; };
+		BB22E1B4277C146E005853F2 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		BB22E1B6277C15AE005853F2 /* StatsGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsGridView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				BB0316AD27780CB200FB108B /* OptionTrades.xcdatamodeld */,
-				BB0316C8277852FA00FB108B /* StatisticModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -168,7 +169,6 @@
 				BB0316C0277838A800FB108B /* OptionTradeView.swift */,
 				BB0316C227783BEA00FB108B /* AddNewOptionView.swift */,
 				BB0316CE2779812100FB108B /* CloseTradeView.swift */,
-				BB0316C6277852C500FB108B /* StatisticView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -234,6 +234,7 @@
 		BB22E19B277C0677005853F2 /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
+				BB22E1AF277C13A0005853F2 /* Stats */,
 				BB22E1A8277C0C04005853F2 /* CircularProgress */,
 				BB22E19C277C0684005853F2 /* Views */,
 				BB22E1A2277C0755005853F2 /* Models */,
@@ -303,6 +304,32 @@
 			isa = PBXGroup;
 			children = (
 				BB22E1A3277C0790005853F2 /* CircularProgressModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BB22E1AF277C13A0005853F2 /* Stats */ = {
+			isa = PBXGroup;
+			children = (
+				BB22E1B0277C13AC005853F2 /* Views */,
+				BB22E1B1277C13B2005853F2 /* Models */,
+			);
+			path = Stats;
+			sourceTree = "<group>";
+		};
+		BB22E1B0277C13AC005853F2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BB22E1B4277C146E005853F2 /* StatsView.swift */,
+				BB22E1B6277C15AE005853F2 /* StatsGridView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BB22E1B1277C13B2005853F2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BB22E1B2277C13CF005853F2 /* StatsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -377,22 +404,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB0316C7277852C500FB108B /* StatisticView.swift in Sources */,
 				BB0316B227780DAF00FB108B /* OptionTradeService.swift in Sources */,
 				BB0316C5277850BD00FB108B /* OptionDetailView.swift in Sources */,
 				BB0316CF2779812100FB108B /* CloseTradeView.swift in Sources */,
 				BB0316B9277811B400FB108B /* OptionTradeViewModel.swift in Sources */,
+				BB22E1B3277C13CF005853F2 /* StatsModel.swift in Sources */,
 				BB22E1A4277C0790005853F2 /* CircularProgressModel.swift in Sources */,
 				BB22E18F277BE9B4005853F2 /* HapticManager.swift in Sources */,
 				BB0316A927779DEE00FB108B /* PreviewProvider.swift in Sources */,
 				BB22E197277BEFAC005853F2 /* BackgroundModifier.swift in Sources */,
 				BB22E194277BEE01005853F2 /* TabBarItems.swift in Sources */,
 				BB0316AF27780CB200FB108B /* OptionTrades.xcdatamodeld in Sources */,
+				BB22E1B5277C146E005853F2 /* StatsView.swift in Sources */,
 				BB22E19F277C06EF005853F2 /* CircularProgressView.swift in Sources */,
 				BB22E1A6277C0AAC005853F2 /* CircularProgressGridView.swift in Sources */,
+				BB22E1B7277C15AE005853F2 /* StatsGridView.swift in Sources */,
 				BB0316C327783BEA00FB108B /* AddNewOptionView.swift in Sources */,
 				BB22E1AC277C0C52005853F2 /* StatisticsContainerView.swift in Sources */,
-				BB0316C9277852FA00FB108B /* StatisticModel.swift in Sources */,
 				BB0316CB277853A000FB108B /* OptionDetailViewModel.swift in Sources */,
 				BB0316B72778118800FB108B /* OptionTradeRowView.swift in Sources */,
 				BB03169927779B8300FB108B /* TradingJournalApp.swift in Sources */,

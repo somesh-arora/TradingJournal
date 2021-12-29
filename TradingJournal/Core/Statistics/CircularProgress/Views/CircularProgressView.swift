@@ -19,7 +19,7 @@ struct CircularProgressView: View {
             progressView
         }
         .padding()
-        .background(Color.secondary.opacity(0.05))
+        .background(Color.accentColor.opacity(0.05))
         .cornerRadius(16)
     }
     

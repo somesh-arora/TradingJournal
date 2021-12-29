@@ -74,7 +74,7 @@ struct OptionDetailView: View {
                   spacing: spacing,
                   pinnedViews: []) {
             ForEach(viewModel.statistics) { stat in
-                StatisticView(stat: stat)
+                StatsView(stat: stat)
             }
         }
     }

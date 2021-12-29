@@ -1,13 +1,13 @@
 //
-//  StatisticModel.swift
+//  StatsModel.swift
 //  TradingJournal
 //
-//  Created by Somesh Arora on 12/25/21.
+//  Created by Somesh Arora on 12/28/21.
 //
 
 import Foundation
 
-struct StatisticModel: Identifiable {
+struct StatsModel: Identifiable {
     let id = UUID().uuidString
     let title: String
     let value: String

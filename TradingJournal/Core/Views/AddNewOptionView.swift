@@ -36,7 +36,6 @@ struct AddNewOptionView: View {
                 Text("New Position")
                     .font(.title)
                     .fontWeight(.heavy)
-                    .foregroundColor(Color.theme.accent)
                 
                 Spacer(minLength: 0)
             }
@@ -112,7 +111,6 @@ struct AddNewOptionView: View {
 //            .opacity(homeViewModel.ticker.isEmpty ? 0.5 : 1.0)
             
         }
-        .background(Color.black.opacity(0.05).ignoresSafeArea(.all, edges: .bottom))
     }
 }
 

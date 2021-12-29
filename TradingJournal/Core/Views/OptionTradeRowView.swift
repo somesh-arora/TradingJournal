@@ -14,48 +14,68 @@ struct OptionTradeRowView: View {
     
     var body: some View {
         HStack(spacing: 0) {
-            VStack(alignment: .leading, spacing: 5) {
-                Text(optionTrade.stockSymbol ?? "")
-                HStack(spacing: 5) {
-                    Text(optionTrade.strategy ?? "")
-                        .font(.caption)
-                    
-                    if optionTrade.contractCount > 1 {
-                        Text("x\(optionTrade.contractCount)")
-                            .font(.system(size: 10))
-                            .bold()
-                            .padding(.horizontal, 5)
-                            .padding(.vertical, 4)
-                            .background(
-                                Capsule()
-                                    .fill(Color.teal.opacity(0.6))
-                            )
-                    }
-                }
-            }
-            
-            Spacer()
-            
-            if optionTrade.isOpen {
-                HStack(spacing: 2) {
-                    Image(systemName: "hourglass")
-                    Text(Calendar.current.numberOfDaysBetween(Date(), and: optionTrade.expirationDate ?? Date()))
-                }
-            }
-            
-            if !optionTrade.isOpen {
-                Text(getPLNumber())
-                    .font(.body)
-                    .bold()
-                    .padding(.horizontal, 5)
-                    .padding(.vertical, 3)
-                    .background(
-                        RoundedRectangle(cornerRadius: 8)
-                            .fill(optionTrade.optionPrice_open - optionTrade.optionPrice_close > 0.0 ? Color.theme.green : Color.theme.red)
-                    )
-            }
+            leftView
+            Spacer(minLength: 10)
+            rightView
         }
-        .padding(10)
+        .padding()
+    }
+    
+    private var leftView: some View {
+        VStack(alignment: .leading, spacing: 5) {
+            titleView
+            subtitleView
+        }
+    }
+    
+    private var titleView: some View {
+        Text(optionTrade.stockSymbol ?? "")
+    }
+    
+    private var subtitleView: some View {
+        HStack(spacing: 5) {
+            Text(optionTrade.strategy ?? "")
+                .font(.caption)
+            Text("x\(optionTrade.contractCount)")
+                .font(.system(size: 10))
+                .bold()
+                .padding(.horizontal, 5)
+                .padding(.vertical, 4)
+                .background(
+                    Capsule()
+                        .fill(Color.teal.opacity(0.6))
+                )
+        }
+    }
+    
+    @ViewBuilder
+    private var rightView: some View {
+        if optionTrade.isOpen {
+            expirationDateView
+        }
+        
+        if !optionTrade.isOpen {
+            profileLossView
+        }
+    }
+    
+    private var expirationDateView: some View {
+        HStack(spacing: 2) {
+            Image(systemName: "hourglass")
+            Text(Calendar.current.numberOfDaysBetween(Date(), and: optionTrade.expirationDate ?? Date()))
+        }
+    }
+    
+    private var profileLossView: some View {
+        Text(getPLNumber())
+            .font(.body)
+            .bold()
+            .padding(.horizontal, 5)
+            .padding(.vertical, 3)
+            .background(
+                RoundedRectangle(cornerRadius: 8)
+                    .fill(optionTrade.optionPrice_open - optionTrade.optionPrice_close > 0.0 ? Color.theme.green : Color.theme.red)
+            )
     }
     
     func getPLNumber() -> String {

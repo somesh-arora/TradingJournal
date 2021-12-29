@@ -38,7 +38,6 @@ struct OptionTradeView: View {
             Text("Positions")
                 .font(.largeTitle)
                 .fontWeight(.heavy)
-                .foregroundColor(Color.theme.accent)
             
             Spacer(minLength: 0)
         }
@@ -57,12 +56,11 @@ struct OptionTradeView: View {
     
     private var optionTradeList: some View {
         ScrollView(.vertical, showsIndicators: false) {
-            LazyVStack(alignment: .leading, spacing: 8) {
+            LazyVStack(alignment: .leading, spacing: 12) {
                 ForEach(viewModel.optionTrades) { optionTrade in
                     OptionTradeRowView(optionTrade: optionTrade)
-                        .padding(5)
-                        .background(Color.white)
-                        .cornerRadius(18)
+                        .background(Color.accentColor.opacity(0.08))
+                        .cornerRadius(16)
                         .onTapGesture {
                             segue(optionTrade: optionTrade)
                         }
