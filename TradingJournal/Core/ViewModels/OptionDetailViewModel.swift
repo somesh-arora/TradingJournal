@@ -41,7 +41,7 @@ class OptionDetailViewModel: ObservableObject {
     private func createStatisticArray(entity: OptionEntity) -> [StatisticModel] {
         var statisticsArray: [StatisticModel] = []
         
-        if let ticker = entity.ticker {
+        if let ticker = entity.stockSymbol {
             statisticsArray.append( StatisticModel(title: "Symbol", value: ticker))
         }
         
@@ -53,10 +53,10 @@ class OptionDetailViewModel: ObservableObject {
         
         statisticsArray.append( StatisticModel(title: "Contracts", value: "\(entity.contractCount)"))
         
-        statisticsArray.append( StatisticModel(title: "Open Price", value: Double(entity.openPrice).asCurrencyWith2Decimals()))
+        statisticsArray.append( StatisticModel(title: "Open Price", value: Double(entity.optionPrice_open).asCurrencyWith2Decimals()))
         
         if !entity.isOpen {
-            statisticsArray.append( StatisticModel(title: "Close Price", value: Double(entity.closePrice).asCurrencyWith2Decimals()))
+            statisticsArray.append( StatisticModel(title: "Close Price", value: Double(entity.optionPrice_close).asCurrencyWith2Decimals()))
         }
         
         if let openDate = entity.openDate {
@@ -72,7 +72,7 @@ class OptionDetailViewModel: ObservableObject {
         }
         
         if !entity.isOpen {
-            let difference = entity.openPrice - entity.closePrice
+            let difference = entity.optionPrice_open - entity.optionPrice_close
             let actualPrice = difference * 100.0 * Float(entity.contractCount)
             
             statisticsArray.append(StatisticModel(title: "P/L", value: Double(actualPrice).asCurrencyWith2Decimals()))

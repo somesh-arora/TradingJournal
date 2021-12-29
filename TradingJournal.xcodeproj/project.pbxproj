@@ -28,6 +28,7 @@
 		BB0316CB277853A000FB108B /* OptionDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0316CA277853A000FB108B /* OptionDetailViewModel.swift */; };
 		BB0316CD27797AEA00FB108B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0316CC27797AEA00FB108B /* Color.swift */; };
 		BB0316CF2779812100FB108B /* CloseTradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0316CE2779812100FB108B /* CloseTradeView.swift */; };
+		BB22E18F277BE9B4005853F2 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB22E18E277BE9B4005853F2 /* HapticManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		BB0316CA277853A000FB108B /* OptionDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionDetailViewModel.swift; sourceTree = "<group>"; };
 		BB0316CC27797AEA00FB108B /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		BB0316CE2779812100FB108B /* CloseTradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseTradeView.swift; sourceTree = "<group>"; };
+		BB22E18E277BE9B4005853F2 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 		BB22E18D277BE934005853F2 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				BB22E18E277BE9B4005853F2 /* HapticManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				BB0316C5277850BD00FB108B /* OptionDetailView.swift in Sources */,
 				BB0316CF2779812100FB108B /* CloseTradeView.swift in Sources */,
 				BB0316B9277811B400FB108B /* OptionTradeViewModel.swift in Sources */,
+				BB22E18F277BE9B4005853F2 /* HapticManager.swift in Sources */,
 				BB0316A927779DEE00FB108B /* PreviewProvider.swift in Sources */,
 				BB0316AF27780CB200FB108B /* OptionTrades.xcdatamodeld in Sources */,
 				BB0316C327783BEA00FB108B /* AddNewOptionView.swift in Sources */,

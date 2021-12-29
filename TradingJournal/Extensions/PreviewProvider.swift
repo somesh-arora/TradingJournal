@@ -27,7 +27,7 @@ class DeveloperPreview {
     
     let openTrade: OptionEntity = {
         let item = OptionEntity(context: NSPersistentContainer(name: "OptionTrades").viewContext)
-        item.ticker = "TSLA"
+        item.stockSymbol = "TSLA"
         item.strategy = "Put Credit Spread"
         item.expirationDate = Date.from(year: 2021, month: 12, day: 31)
         item.contractCount = 10
@@ -37,11 +37,11 @@ class DeveloperPreview {
     
     let closedTrade: OptionEntity = {
         let item = OptionEntity(context: NSPersistentContainer(name: "OptionTrades").viewContext)
-        item.ticker = "AAPL"
+        item.stockSymbol = "AAPL"
         item.strategy = "Put Credit Spread"
         item.contractCount = 10
-        item.openPrice = 11.90
-        item.closePrice = 0.20
+        item.optionPrice_open = 11.90
+        item.optionPrice_close = 0.20
         item.isOpen = false
         return item
     }()

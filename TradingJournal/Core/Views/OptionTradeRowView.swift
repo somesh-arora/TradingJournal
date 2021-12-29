@@ -15,7 +15,7 @@ struct OptionTradeRowView: View {
     var body: some View {
         HStack(spacing: 0) {
             VStack(alignment: .leading, spacing: 5) {
-                Text(optionTrade.ticker ?? "")
+                Text(optionTrade.stockSymbol ?? "")
                 HStack(spacing: 5) {
                     Text(optionTrade.strategy ?? "")
                         .font(.caption)
@@ -51,7 +51,7 @@ struct OptionTradeRowView: View {
                     .padding(.vertical, 3)
                     .background(
                         RoundedRectangle(cornerRadius: 8)
-                            .fill(optionTrade.openPrice - optionTrade.closePrice > 0.0 ? Color.theme.green : Color.theme.red)
+                            .fill(optionTrade.optionPrice_open - optionTrade.optionPrice_close > 0.0 ? Color.theme.green : Color.theme.red)
                     )
             }
         }
@@ -59,7 +59,7 @@ struct OptionTradeRowView: View {
     }
     
     func getPLNumber() -> String {
-        let difference = optionTrade.openPrice - optionTrade.closePrice
+        let difference = optionTrade.optionPrice_open - optionTrade.optionPrice_close
         let actualPrice = difference * 100.0 * Float(optionTrade.contractCount)
         return Double(actualPrice).asCurrencyWith2Decimals()
     }

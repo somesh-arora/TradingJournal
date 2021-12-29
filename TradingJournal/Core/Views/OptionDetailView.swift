@@ -52,7 +52,7 @@ struct OptionDetailView: View {
         .sheet(isPresented: $viewModel.showClosingTradeView) {
             CloseTradeView(viewModel: viewModel)
         }
-        .navigationTitle(viewModel.optionEntity.ticker ?? "")
+        .navigationTitle(viewModel.optionEntity.stockSymbol ?? "")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
