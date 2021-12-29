@@ -46,8 +46,6 @@ class DeveloperPreview {
         return item
     }()
     
-    let newPosition = NewPositionModel(ticker: "TSLA", strategy: "Put Credit Spread", openDate: Date(), expirationDate: Date(), closeDate: nil, openPrice: 1.9, closePrice: 0.2, numberOfContracts: 1)
-    
     let statistic1 = StatisticModel(title: "Market Cap", value: "$12.5Bn", percentageChange: 25.23)
     let statistic2 = StatisticModel(title: "Total Volume", value: "$1.234Tn")
     let statistic3 = StatisticModel(title: "Portfolio Value", value: "$12.24k", percentageChange: -12.34)
