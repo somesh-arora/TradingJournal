@@ -11,6 +11,23 @@
 		BB03169B27779B8300FB108B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB03169A27779B8300FB108B /* ContentView.swift */; };
 		BB03169D27779B8500FB108B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB03169C27779B8500FB108B /* Assets.xcassets */; };
 		BB0316A027779B8500FB108B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB03169F27779B8500FB108B /* Preview Assets.xcassets */; };
+		BB0316A727779C2500FB108B /* NewPositionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0316A627779C2500FB108B /* NewPositionModel.swift */; };
+		BB0316A927779DEE00FB108B /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0316A827779DEE00FB108B /* PreviewProvider.swift */; };
+		BB0316AF27780CB200FB108B /* OptionTrades.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BB0316AD27780CB200FB108B /* OptionTrades.xcdatamodeld */; };
+		BB0316B227780DAF00FB108B /* OptionTradeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0316B127780DAF00FB108B /* OptionTradeService.swift */; };
+		BB0316B72778118800FB108B /* OptionTradeRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0316B62778118800FB108B /* OptionTradeRowView.swift */; };
+		BB0316B9277811B400FB108B /* OptionTradeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0316B8277811B400FB108B /* OptionTradeViewModel.swift */; };
+		BB0316BB2778265400FB108B /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0316BA2778265300FB108B /* Date.swift */; };
+		BB0316BD277827F000FB108B /* Calender.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0316BC277827F000FB108B /* Calender.swift */; };
+		BB0316BF2778292C00FB108B /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0316BE2778292C00FB108B /* Double.swift */; };
+		BB0316C1277838A800FB108B /* OptionTradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0316C0277838A800FB108B /* OptionTradeView.swift */; };
+		BB0316C327783BEA00FB108B /* AddNewOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0316C227783BEA00FB108B /* AddNewOptionView.swift */; };
+		BB0316C5277850BD00FB108B /* OptionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0316C4277850BD00FB108B /* OptionDetailView.swift */; };
+		BB0316C7277852C500FB108B /* StatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0316C6277852C500FB108B /* StatisticView.swift */; };
+		BB0316C9277852FA00FB108B /* StatisticModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0316C8277852FA00FB108B /* StatisticModel.swift */; };
+		BB0316CB277853A000FB108B /* OptionDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0316CA277853A000FB108B /* OptionDetailViewModel.swift */; };
+		BB0316CD27797AEA00FB108B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0316CC27797AEA00FB108B /* Color.swift */; };
+		BB0316CF2779812100FB108B /* CloseTradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0316CE2779812100FB108B /* CloseTradeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +36,23 @@
 		BB03169A27779B8300FB108B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BB03169C27779B8500FB108B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB03169F27779B8500FB108B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BB0316A627779C2500FB108B /* NewPositionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPositionModel.swift; sourceTree = "<group>"; };
+		BB0316A827779DEE00FB108B /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
+		BB0316AE27780CB200FB108B /* OptionTrades.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OptionTrades.xcdatamodel; sourceTree = "<group>"; };
+		BB0316B127780DAF00FB108B /* OptionTradeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionTradeService.swift; sourceTree = "<group>"; };
+		BB0316B62778118800FB108B /* OptionTradeRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionTradeRowView.swift; sourceTree = "<group>"; };
+		BB0316B8277811B400FB108B /* OptionTradeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionTradeViewModel.swift; sourceTree = "<group>"; };
+		BB0316BA2778265300FB108B /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		BB0316BC277827F000FB108B /* Calender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calender.swift; sourceTree = "<group>"; };
+		BB0316BE2778292C00FB108B /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		BB0316C0277838A800FB108B /* OptionTradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionTradeView.swift; sourceTree = "<group>"; };
+		BB0316C227783BEA00FB108B /* AddNewOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewOptionView.swift; sourceTree = "<group>"; };
+		BB0316C4277850BD00FB108B /* OptionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionDetailView.swift; sourceTree = "<group>"; };
+		BB0316C6277852C500FB108B /* StatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticView.swift; sourceTree = "<group>"; };
+		BB0316C8277852FA00FB108B /* StatisticModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticModel.swift; sourceTree = "<group>"; };
+		BB0316CA277853A000FB108B /* OptionDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionDetailViewModel.swift; sourceTree = "<group>"; };
+		BB0316CC27797AEA00FB108B /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		BB0316CE2779812100FB108B /* CloseTradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseTradeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +85,17 @@
 		BB03169727779B8300FB108B /* TradingJournal */ = {
 			isa = PBXGroup;
 			children = (
+				BB22E18D277BE934005853F2 /* Utilities */,
+				BB0316B027780D8100FB108B /* Services */,
+				BB0316AC27780BD500FB108B /* Extensions */,
+				BB0316AB27780BCB00FB108B /* Models */,
+				BB0316B32778114300FB108B /* Core */,
 				BB03169827779B8300FB108B /* TradingJournalApp.swift */,
 				BB03169A27779B8300FB108B /* ContentView.swift */,
 				BB03169C27779B8500FB108B /* Assets.xcassets */,
 				BB03169E27779B8500FB108B /* Preview Content */,
+				BB0316A627779C2500FB108B /* NewPositionModel.swift */,
+				BB0316C6277852C500FB108B /* StatisticView.swift */,
 			);
 			path = TradingJournal;
 			sourceTree = "<group>";
@@ -65,6 +106,72 @@
 				BB03169F27779B8500FB108B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BB0316AB27780BCB00FB108B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BB0316AD27780CB200FB108B /* OptionTrades.xcdatamodeld */,
+				BB0316C8277852FA00FB108B /* StatisticModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BB0316AC27780BD500FB108B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BB0316A827779DEE00FB108B /* PreviewProvider.swift */,
+				BB0316BA2778265300FB108B /* Date.swift */,
+				BB0316BC277827F000FB108B /* Calender.swift */,
+				BB0316BE2778292C00FB108B /* Double.swift */,
+				BB0316CC27797AEA00FB108B /* Color.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BB0316B027780D8100FB108B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BB0316B127780DAF00FB108B /* OptionTradeService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		BB0316B32778114300FB108B /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				BB0316B52778116A00FB108B /* ViewModels */,
+				BB0316B42778114E00FB108B /* Views */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		BB0316B42778114E00FB108B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BB0316B62778118800FB108B /* OptionTradeRowView.swift */,
+				BB0316C0277838A800FB108B /* OptionTradeView.swift */,
+				BB0316C227783BEA00FB108B /* AddNewOptionView.swift */,
+				BB0316C4277850BD00FB108B /* OptionDetailView.swift */,
+				BB0316CE2779812100FB108B /* CloseTradeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BB0316B52778116A00FB108B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				BB0316B8277811B400FB108B /* OptionTradeViewModel.swift */,
+				BB0316CA277853A000FB108B /* OptionDetailViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		BB22E18D277BE934005853F2 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +245,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB03169B27779B8300FB108B /* ContentView.swift in Sources */,
+				BB0316C7277852C500FB108B /* StatisticView.swift in Sources */,
+				BB0316B227780DAF00FB108B /* OptionTradeService.swift in Sources */,
+				BB0316C5277850BD00FB108B /* OptionDetailView.swift in Sources */,
+				BB0316CF2779812100FB108B /* CloseTradeView.swift in Sources */,
+				BB0316B9277811B400FB108B /* OptionTradeViewModel.swift in Sources */,
+				BB0316A927779DEE00FB108B /* PreviewProvider.swift in Sources */,
+				BB0316AF27780CB200FB108B /* OptionTrades.xcdatamodeld in Sources */,
+				BB0316C327783BEA00FB108B /* AddNewOptionView.swift in Sources */,
+				BB0316C9277852FA00FB108B /* StatisticModel.swift in Sources */,
+				BB0316CB277853A000FB108B /* OptionDetailViewModel.swift in Sources */,
+				BB0316B72778118800FB108B /* OptionTradeRowView.swift in Sources */,
 				BB03169927779B8300FB108B /* TradingJournalApp.swift in Sources */,
+				BB0316BB2778265400FB108B /* Date.swift in Sources */,
+				BB0316C1277838A800FB108B /* OptionTradeView.swift in Sources */,
+				BB0316A727779C2500FB108B /* NewPositionModel.swift in Sources */,
+				BB0316BF2778292C00FB108B /* Double.swift in Sources */,
+				BB0316BD277827F000FB108B /* Calender.swift in Sources */,
+				BB0316CD27797AEA00FB108B /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +465,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BB0316AD27780CB200FB108B /* OptionTrades.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BB0316AE27780CB200FB108B /* OptionTrades.xcdatamodel */,
+			);
+			currentVersion = BB0316AE27780CB200FB108B /* OptionTrades.xcdatamodel */;
+			path = OptionTrades.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BB03168D27779B8300FB108B /* Project object */;
 }
