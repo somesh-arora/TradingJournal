@@ -22,7 +22,6 @@ struct StatsGridView: View {
                 StatsView(stat: stat)
             }
         }
-        .padding()
     }
 }
 

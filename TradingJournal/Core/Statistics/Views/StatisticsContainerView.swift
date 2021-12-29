@@ -13,22 +13,12 @@ struct StatisticsContainerView: View {
     
     var body: some View {
         VStack(spacing: 10) {
-            headerView
+            LargeTitleView(title: "Statistics")
             statisticsView
         }
+        .padding()
         .navigationBarHidden(true)
         .navigationTitle("")
-    }
-    
-    private var headerView: some View {
-        HStack {
-            Text("Statistics")
-                .font(.largeTitle)
-                .fontWeight(.heavy)
-            
-            Spacer(minLength: 0)
-        }
-        .padding()
     }
     
     private var statisticsView: some View {

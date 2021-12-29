@@ -36,6 +36,7 @@
 		BB22E1B3277C13CF005853F2 /* StatsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB22E1B2277C13CF005853F2 /* StatsModel.swift */; };
 		BB22E1B5277C146E005853F2 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB22E1B4277C146E005853F2 /* StatsView.swift */; };
 		BB22E1B7277C15AE005853F2 /* StatsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB22E1B6277C15AE005853F2 /* StatsGridView.swift */; };
+		BB22E1B9277C206B005853F2 /* LargeTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB22E1B8277C206B005853F2 /* LargeTitleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		BB22E1B2277C13CF005853F2 /* StatsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsModel.swift; sourceTree = "<group>"; };
 		BB22E1B4277C146E005853F2 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		BB22E1B6277C15AE005853F2 /* StatsGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsGridView.swift; sourceTree = "<group>"; };
+		BB22E1B8277C206B005853F2 /* LargeTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeTitleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				BB22E196277BEFAC005853F2 /* BackgroundModifier.swift */,
+				BB22E1B8277C206B005853F2 /* LargeTitleView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				BB22E1AC277C0C52005853F2 /* StatisticsContainerView.swift in Sources */,
 				BB0316CB277853A000FB108B /* OptionDetailViewModel.swift in Sources */,
 				BB0316B72778118800FB108B /* OptionTradeRowView.swift in Sources */,
+				BB22E1B9277C206B005853F2 /* LargeTitleView.swift in Sources */,
 				BB03169927779B8300FB108B /* TradingJournalApp.swift in Sources */,
 				BB0316BB2778265400FB108B /* Date.swift in Sources */,
 				BB0316C1277838A800FB108B /* OptionTradeView.swift in Sources */,

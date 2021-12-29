@@ -16,7 +16,7 @@ struct OptionTradeView: View {
     
     var body: some View {
         VStack(spacing: 10) {
-            headerView
+            LargeTitleView(title: "Positions")
             if viewModel.optionTrades.isEmpty {
                 emptyView
             } else {
@@ -31,16 +31,6 @@ struct OptionTradeView: View {
         )
         .navigationBarHidden(true)
         .navigationTitle("")
-    }
-    
-    private var headerView: some View {
-        HStack {
-            Text("Positions")
-                .font(.largeTitle)
-                .fontWeight(.heavy)
-            
-            Spacer(minLength: 0)
-        }
     }
     
     private var emptyView: some View {

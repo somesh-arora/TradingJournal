@@ -32,14 +32,8 @@ struct AddNewOptionView: View {
     
     var body: some View {
         VStack {
-            HStack {
-                Text("New Position")
-                    .font(.title)
-                    .fontWeight(.heavy)
-                
-                Spacer(minLength: 0)
-            }
-            .padding()
+            LargeTitleView(title: "New Position")
+                .padding()
             
             Form {
                 Section {

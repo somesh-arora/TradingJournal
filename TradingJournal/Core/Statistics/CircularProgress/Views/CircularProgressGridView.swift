@@ -22,7 +22,6 @@ struct CircularProgressGridView: View {
                 CircularProgressView(model: value)
             }
         }
-        .padding()
     }
 }
 

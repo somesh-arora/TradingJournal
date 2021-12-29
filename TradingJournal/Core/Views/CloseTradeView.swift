@@ -27,14 +27,8 @@ struct CloseTradeView: View {
     
     var body: some View {
         VStack {
-            HStack {
-                Text("Close Position")
-                    .font(.title)
-                    .fontWeight(.heavy)
-                
-                Spacer(minLength: 0)
-            }
-            .padding()
+            LargeTitleView(title: "Close Position")
+                .padding()
             
             Form {
                 Section {
