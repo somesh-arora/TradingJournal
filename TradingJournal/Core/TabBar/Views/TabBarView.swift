@@ -37,7 +37,7 @@ struct TabBarView: View {
                         .modifier(BackgroundModifier())
                         .tag(item.imageName.lowercased())
                 case .statistics:
-                    Text(item.title)
+                    StatisticsContainerView(viewModel: StatisticsViewModel())
                         .modifier(BackgroundModifier())
                         .tag(item.imageName.lowercased())
                 }

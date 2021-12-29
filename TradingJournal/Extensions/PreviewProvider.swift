@@ -25,6 +25,8 @@ class DeveloperPreview {
     
     let optionDetailViewModel = OptionDetailViewModel(optionEntity: instance.openTrade)
     
+    let circularProgressModel = CircularProgressModel(header: "Target", currentValue: 1200, targetValue: 10000, progressColor: Color.theme.accent, footer: "$10,000")
+    
     let openTrade: OptionEntity = {
         let item = OptionEntity(context: NSPersistentContainer(name: "OptionTrades").viewContext)
         item.stockSymbol = "TSLA"
