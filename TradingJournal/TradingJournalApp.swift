@@ -20,7 +20,7 @@ struct TradingJournalApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                OptionTradeView()
+                TabBarView()
                     .navigationBarHidden(true)
             }
             .environmentObject(viewModel)

@@ -24,12 +24,8 @@ struct OptionTradeView: View {
                     optionTradeList
                 }
             }
-            addButtonView
         }
         .ignoresSafeArea(.all, edges: .top)
-        .sheet(isPresented: $viewModel.isNewTrade) {
-            AddNewOptionView(viewModel: viewModel)
-        }
         .background(
             NavigationLink(destination: OptionDetailLoadingView(optionEntity: $selectedOptionTrade),
                            isActive: $showDetailView,
@@ -73,22 +69,6 @@ struct OptionTradeView: View {
                 }
             }
         }
-    }
-    
-    private var addButtonView: some View {
-        Button {
-            viewModel.isNewTrade.toggle()
-        } label: {
-            Image(systemName: "plus")
-                .font(.largeTitle)
-                .foregroundColor(.white)
-                .padding(20)
-                .background(
-                    LinearGradient(gradient: .init(colors: [Color.theme.green.opacity(0.7), Color.theme.green, Color.theme.green.opacity(0.7)]), startPoint: .leading, endPoint: .trailing)
-                )
-                .clipShape(Circle())
-        }
-        .padding()
     }
     
     private func segue(optionTrade: OptionEntity) {

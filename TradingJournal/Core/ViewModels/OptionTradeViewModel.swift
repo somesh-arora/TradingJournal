@@ -16,18 +16,13 @@ class OptionTradeViewModel: ObservableObject {
     
     private var cancellables = Set<AnyCancellable>()
     
-    @Published var isNewTrade: Bool = false
-    
-    
     init() {
         addSubscribers()
     }
     
     func addNewOptionTrade(data: NewOptionModel) {
         optionTradeService.add(data: data)
-        isNewTrade.toggle()
     }
-    
     
     func addSubscribers() {
         optionTradeService.$savedEntities

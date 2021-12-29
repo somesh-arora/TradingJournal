@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		BB03169927779B8300FB108B /* TradingJournalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB03169827779B8300FB108B /* TradingJournalApp.swift */; };
-		BB03169B27779B8300FB108B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB03169A27779B8300FB108B /* ContentView.swift */; };
 		BB03169D27779B8500FB108B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB03169C27779B8500FB108B /* Assets.xcassets */; };
 		BB0316A027779B8500FB108B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB03169F27779B8500FB108B /* Preview Assets.xcassets */; };
 		BB0316A927779DEE00FB108B /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0316A827779DEE00FB108B /* PreviewProvider.swift */; };
@@ -28,12 +27,14 @@
 		BB0316CD27797AEA00FB108B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0316CC27797AEA00FB108B /* Color.swift */; };
 		BB0316CF2779812100FB108B /* CloseTradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0316CE2779812100FB108B /* CloseTradeView.swift */; };
 		BB22E18F277BE9B4005853F2 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB22E18E277BE9B4005853F2 /* HapticManager.swift */; };
+		BB22E192277BEDE4005853F2 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB22E191277BEDE4005853F2 /* TabBarView.swift */; };
+		BB22E194277BEE01005853F2 /* TabBarItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB22E193277BEE01005853F2 /* TabBarItems.swift */; };
+		BB22E197277BEFAC005853F2 /* BackgroundModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB22E196277BEFAC005853F2 /* BackgroundModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BB03169527779B8300FB108B /* TradingJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TradingJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB03169827779B8300FB108B /* TradingJournalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradingJournalApp.swift; sourceTree = "<group>"; };
-		BB03169A27779B8300FB108B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BB03169C27779B8500FB108B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB03169F27779B8500FB108B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BB0316A827779DEE00FB108B /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
@@ -53,6 +54,9 @@
 		BB0316CC27797AEA00FB108B /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		BB0316CE2779812100FB108B /* CloseTradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseTradeView.swift; sourceTree = "<group>"; };
 		BB22E18E277BE9B4005853F2 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
+		BB22E191277BEDE4005853F2 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		BB22E193277BEE01005853F2 /* TabBarItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItems.swift; sourceTree = "<group>"; };
+		BB22E196277BEFAC005853F2 /* BackgroundModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,13 +89,13 @@
 		BB03169727779B8300FB108B /* TradingJournal */ = {
 			isa = PBXGroup;
 			children = (
+				BB22E195277BEF96005853F2 /* Components */,
 				BB22E18D277BE934005853F2 /* Utilities */,
 				BB0316B027780D8100FB108B /* Services */,
 				BB0316AC27780BD500FB108B /* Extensions */,
 				BB0316AB27780BCB00FB108B /* Models */,
 				BB0316B32778114300FB108B /* Core */,
 				BB03169827779B8300FB108B /* TradingJournalApp.swift */,
-				BB03169A27779B8300FB108B /* ContentView.swift */,
 				BB03169C27779B8500FB108B /* Assets.xcassets */,
 				BB03169E27779B8500FB108B /* Preview Content */,
 			);
@@ -138,6 +142,7 @@
 		BB0316B32778114300FB108B /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				BB22E190277BEDC0005853F2 /* TabBar */,
 				BB0316B52778116A00FB108B /* ViewModels */,
 				BB0316B42778114E00FB108B /* Views */,
 			);
@@ -172,6 +177,23 @@
 				BB22E18E277BE9B4005853F2 /* HapticManager.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		BB22E190277BEDC0005853F2 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				BB22E191277BEDE4005853F2 /* TabBarView.swift */,
+				BB22E193277BEE01005853F2 /* TabBarItems.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		BB22E195277BEF96005853F2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				BB22E196277BEFAC005853F2 /* BackgroundModifier.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,7 +266,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB03169B27779B8300FB108B /* ContentView.swift in Sources */,
 				BB0316C7277852C500FB108B /* StatisticView.swift in Sources */,
 				BB0316B227780DAF00FB108B /* OptionTradeService.swift in Sources */,
 				BB0316C5277850BD00FB108B /* OptionDetailView.swift in Sources */,
@@ -252,6 +273,8 @@
 				BB0316B9277811B400FB108B /* OptionTradeViewModel.swift in Sources */,
 				BB22E18F277BE9B4005853F2 /* HapticManager.swift in Sources */,
 				BB0316A927779DEE00FB108B /* PreviewProvider.swift in Sources */,
+				BB22E197277BEFAC005853F2 /* BackgroundModifier.swift in Sources */,
+				BB22E194277BEE01005853F2 /* TabBarItems.swift in Sources */,
 				BB0316AF27780CB200FB108B /* OptionTrades.xcdatamodeld in Sources */,
 				BB0316C327783BEA00FB108B /* AddNewOptionView.swift in Sources */,
 				BB0316C9277852FA00FB108B /* StatisticModel.swift in Sources */,
@@ -262,6 +285,7 @@
 				BB0316C1277838A800FB108B /* OptionTradeView.swift in Sources */,
 				BB0316BF2778292C00FB108B /* Double.swift in Sources */,
 				BB0316BD277827F000FB108B /* Calender.swift in Sources */,
+				BB22E192277BEDE4005853F2 /* TabBarView.swift in Sources */,
 				BB0316CD27797AEA00FB108B /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
