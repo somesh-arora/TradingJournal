@@ -49,12 +49,18 @@ extension OptionTradeService {
     func add(data: NewOptionModel) {
         let entity = OptionEntity(context: container.viewContext)
         entity.id = UUID()
-        entity.stockSymbol = data.tickerSymbol
+        entity.stockSymbol = data.stockSymbol
         entity.strategy = data.strategy
-        entity.contractCount = Int16(data.contractCount)
-        if let openPrice = Float(data.price) {
-            entity.optionPrice_open = openPrice
+        if let optionPrice_open = Float(data.optionPrice_open) {
+            entity.optionPrice_open = optionPrice_open
         }
+        if let stockPrice_open = Float(data.stockPrice_open) {
+            entity.stockPrice_open = stockPrice_open
+        }
+        if let collateral = Float(data.collateral) {
+            entity.collateral = collateral
+        }
+        entity.contractCount = Int16(data.contractCount)
         entity.openDate = data.openDate
         entity.expirationDate = data.expirationDate
         entity.isOpen = true

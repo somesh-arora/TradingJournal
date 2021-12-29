@@ -9,102 +9,177 @@ import SwiftUI
 
 struct NewOptionModel: Identifiable {
     let id = UUID().uuidString
-    let tickerSymbol: String
+    let stockSymbol: String
     let strategy: String
+    let optionPrice_open: String
+    let stockPrice_open: String
+    let collateral: String
     let contractCount: Int
-    let price: String
     let openDate: Date
     let expirationDate: Date
+}
+
+enum NewTrade: CaseIterable {
+    case stockSymbol
+    case strategy
+    case optionPrice_open
+    case stockPrice_open
+    case collateral
+    case contractCount
+    case openDate
+    case expirationDate
 }
 
 struct AddNewOptionView: View {
     @ObservedObject var viewModel: OptionTradeViewModel
     
-    @State private var tickerSymbol: String = ""
+    @State private var stockSymbol: String = ""
     @State private var strategy: String = ""
+    @State private var optionPrice_open: String = ""
+    @State private var stockPrice_open: String = ""
+    @State private var collateral: String = ""
     @State private var contractCount: Int = 1
-    @State private var price: String = ""
-    
     @State private var openDate: Date = Date()
     @State private var expirationDate: Date = Date()
     
     @Environment(\.managedObjectContext) var context
     
     var body: some View {
-        VStack {
+        VStack(spacing: 20) {
+            headerView
+            formView
+        }
+        .padding()
+        .navigationBarHidden(true)
+        .navigationTitle("")
+    }
+    
+    private var headerView: some View {
+        HStack {
             LargeTitleView(title: "New Position")
-                .padding()
-            
-            Form {
-                Section {
-                    HStack {
-                        Text("Ticker")
-                        Spacer()
-                        TextField("Ex: AAPL", text: $tickerSymbol)
-                            .multilineTextAlignment(.trailing)
-                    }
-                    
-                    HStack {
-                        Text("Strategy")
-                        Spacer()
-                        TextField("Ex: Iron Condor", text: $strategy)
-                            .multilineTextAlignment(.trailing)
-                    }
-                    
-                    HStack {
-                        Text("Price")
-                        Spacer()
-                        TextField("Ex: 1.3", text: $price)
-                            .multilineTextAlignment(.trailing)
-                            .keyboardType(.decimalPad)
-                    }
-                    
-                    HStack {
-                        Stepper("Contracts: \(contractCount)", value: $contractCount, in: 1...9999)
-                            .keyboardType(.numberPad)
-                            .multilineTextAlignment(.trailing)
-                    }
-                }
-                
-                Section {
-                    DatePicker(selection: $openDate, displayedComponents: .date) {
-                        Text("Open Date")
-                    }
-                    
-                    DatePicker(selection: $expirationDate, displayedComponents: .date) {
-                        Text("Expiration Date")
+            Spacer()
+            saveButtonView
+        }
+    }
+    
+    private var formView: some View {
+        ScrollView(.vertical, showsIndicators: false) {
+            LazyVStack(alignment: .leading, spacing: 12) {
+                ForEach(NewTrade.allCases, id: \.self) { section in
+                    switch section {
+                    case .stockSymbol:
+                        HStack(spacing: 4) {
+                            attributeText("Ticker:")
+//                            Image(systemName: "dollarsign.square")
+                            TextField("Ex: MSFT, AAPL", text: $stockSymbol)
+                        }
+                        .padding(.horizontal)
+                        .padding(.vertical, 10)
+                        .background(Color.accentColor.opacity(0.08))
+                        .cornerRadius(8)
+                        
+                    case .strategy:
+                        HStack {
+                            attributeText("Strategy:")
+                            TextField("Ex: Iron Condor", text: $strategy)
+                        }
+                        .padding(.horizontal)
+                        .padding(.vertical, 10)
+                        .background(Color.accentColor.opacity(0.08))
+                        .cornerRadius(8)
+                    case .optionPrice_open:
+                        HStack {
+                            attributeText("Option Price:")
+                            TextField("1.5", text: $optionPrice_open)
+                        }
+                        .padding(.horizontal)
+                        .padding(.vertical, 10)
+                        .background(Color.accentColor.opacity(0.08))
+                        .cornerRadius(8)
+                    case .stockPrice_open:
+                        HStack {
+                            attributeText("Stock Price:")
+                            TextField("Ex: 200", text: $stockPrice_open)
+                        }
+                        .padding(.horizontal)
+                        .padding(.vertical, 10)
+                        .background(Color.accentColor.opacity(0.08))
+                        .cornerRadius(8)
+                    case .collateral:
+                        HStack {
+                            attributeText("Colletral:")
+                            TextField("Ex: 1000", text: $collateral)
+                        }
+                        .padding(.horizontal)
+                        .padding(.vertical, 10)
+                        .background(Color.accentColor.opacity(0.08))
+                        .cornerRadius(8)
+                    case .contractCount:
+                        HStack {
+                            attributeText("Contracts:")
+                            Stepper("\(contractCount)", value: $contractCount, in: 1...9999)
+                                .keyboardType(.numberPad)
+                                .multilineTextAlignment(.trailing)
+                        }
+                        .padding(.horizontal)
+                        .padding(.vertical, 10)
+                        .background(Color.accentColor.opacity(0.08))
+                        .cornerRadius(8)
+                    case .openDate:
+                        DatePicker(selection: $openDate, displayedComponents: .date) {
+                            attributeText("Open Date:")
+                        }
+                        .padding(.horizontal)
+                        .padding(.vertical, 10)
+                        .background(Color.accentColor.opacity(0.08))
+                        .cornerRadius(8)
+                    case .expirationDate:
+                        DatePicker(selection: $expirationDate, displayedComponents: .date) {
+                            attributeText("Expiration Date:")
+                        }
+                        .padding(.horizontal)
+                        .padding(.vertical, 10)
+                        .background(Color.accentColor.opacity(0.08))
+                        .cornerRadius(8)
                     }
                 }
             }
-            .padding()
-            
-            
-            Button {
-                let data = NewOptionModel(tickerSymbol: tickerSymbol, strategy: strategy, contractCount: contractCount, price: price, openDate: openDate, expirationDate: expirationDate)
-                viewModel.addNewOptionTrade(data: data)
-            } label: {
-                Label {
-                    Text("Add")
-                        .font(.title2)
-                        .foregroundColor(.white)
-                        .fontWeight(.bold)
-                } icon: {
-                    Image(systemName: "plus")
-                        .font(.title2)
-                        .foregroundColor(.white)
-                }
-                .padding(.vertical)
-                .frame(width: UIScreen.main.bounds.width - 30)
+        }
+    }
+    
+    private func attributeText(_ text: String) -> some View {
+        Text(text)
+            .font(.callout.bold())
+            .fontWeight(.heavy)
+            .multilineTextAlignment(.trailing)
+            .foregroundColor(Color.gray)
+    }
+    
+    private var saveButtonView: some View {
+        Button {
+            let data = NewOptionModel(stockSymbol: stockSymbol,
+                                      strategy: strategy,
+                                      optionPrice_open: optionPrice_open,
+                                      stockPrice_open: stockPrice_open,
+                                      collateral: collateral,
+                                      contractCount: contractCount,
+                                      openDate: openDate,
+                                      expirationDate: expirationDate)
+            viewModel.addNewOptionTrade(data: data)
+        } label: {
+            Text("Save")
+                .padding(.horizontal, 12)
+                .padding(.vertical, 5)
+                .font(.callout.bold())
+                .foregroundColor(.white)
                 .background(
-                    LinearGradient(gradient: .init(colors: [Color.theme.green.opacity(0.7), Color.theme.green, Color.theme.green.opacity(0.7)]), startPoint: .leading, endPoint: .trailing)
+                    LinearGradient(gradient: .init(colors: [Color.blue.opacity(0.7), Color.blue, Color.blue.opacity(0.7)]), startPoint: .leading, endPoint: .trailing)
                 )
                 .cornerRadius(12)
-            }
-            .padding()
+        }
 //            .disabled(homeViewModel.ticker.isEmpty)
 //            .opacity(homeViewModel.ticker.isEmpty ? 0.5 : 1.0)
-            
-        }
+        
     }
 }
 

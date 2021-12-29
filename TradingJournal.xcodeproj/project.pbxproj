@@ -37,6 +37,7 @@
 		BB22E1B5277C146E005853F2 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB22E1B4277C146E005853F2 /* StatsView.swift */; };
 		BB22E1B7277C15AE005853F2 /* StatsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB22E1B6277C15AE005853F2 /* StatsGridView.swift */; };
 		BB22E1B9277C206B005853F2 /* LargeTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB22E1B8277C206B005853F2 /* LargeTitleView.swift */; };
+		BB22E1BE277C3D07005853F2 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB22E1BD277C3D07005853F2 /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		BB22E1B4277C146E005853F2 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		BB22E1B6277C15AE005853F2 /* StatsGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsGridView.swift; sourceTree = "<group>"; };
 		BB22E1B8277C206B005853F2 /* LargeTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeTitleView.swift; sourceTree = "<group>"; };
+		BB22E1BD277C3D07005853F2 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,10 +157,10 @@
 		BB0316B32778114300FB108B /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				BB22E1BA277C3714005853F2 /* TradeList */,
 				BB22E19B277C0677005853F2 /* Statistics */,
 				BB22E190277BEDC0005853F2 /* TabBar */,
 				BB22E198277C04DF005853F2 /* TradeDetail */,
-				BB0316B52778116A00FB108B /* ViewModels */,
 				BB0316B42778114E00FB108B /* Views */,
 			);
 			path = Core;
@@ -167,20 +169,10 @@
 		BB0316B42778114E00FB108B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BB0316B62778118800FB108B /* OptionTradeRowView.swift */,
-				BB0316C0277838A800FB108B /* OptionTradeView.swift */,
 				BB0316C227783BEA00FB108B /* AddNewOptionView.swift */,
 				BB0316CE2779812100FB108B /* CloseTradeView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		BB0316B52778116A00FB108B /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				BB0316B8277811B400FB108B /* OptionTradeViewModel.swift */,
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		BB22E18D277BE934005853F2 /* Utilities */ = {
@@ -205,6 +197,7 @@
 			children = (
 				BB22E196277BEFAC005853F2 /* BackgroundModifier.swift */,
 				BB22E1B8277C206B005853F2 /* LargeTitleView.swift */,
+				BB22E1BD277C3D07005853F2 /* CustomTextField.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -337,6 +330,32 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		BB22E1BA277C3714005853F2 /* TradeList */ = {
+			isa = PBXGroup;
+			children = (
+				BB22E1BC277C373C005853F2 /* Views */,
+				BB22E1BB277C3726005853F2 /* ViewModels */,
+			);
+			path = TradeList;
+			sourceTree = "<group>";
+		};
+		BB22E1BB277C3726005853F2 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				BB0316B8277811B400FB108B /* OptionTradeViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		BB22E1BC277C373C005853F2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BB0316B62778118800FB108B /* OptionTradeRowView.swift */,
+				BB0316C0277838A800FB108B /* OptionTradeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -412,6 +431,7 @@
 				BB0316CF2779812100FB108B /* CloseTradeView.swift in Sources */,
 				BB0316B9277811B400FB108B /* OptionTradeViewModel.swift in Sources */,
 				BB22E1B3277C13CF005853F2 /* StatsModel.swift in Sources */,
+				BB22E1BE277C3D07005853F2 /* CustomTextField.swift in Sources */,
 				BB22E1A4277C0790005853F2 /* CircularProgressModel.swift in Sources */,
 				BB22E18F277BE9B4005853F2 /* HapticManager.swift in Sources */,
 				BB0316A927779DEE00FB108B /* PreviewProvider.swift in Sources */,
