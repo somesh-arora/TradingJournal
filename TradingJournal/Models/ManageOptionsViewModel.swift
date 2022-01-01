@@ -34,8 +34,8 @@ final class ManageOptionsViewModel: ObservableObject {
         self.optionTradingService.addNewPosition(position)
     }
     
-    func deletePosition(_ position: OptionEntity) {
-        
+    func delete(_ entity: OptionEntity) {
+        self.optionTradingService.delete(entity: entity)
     }
     
     func closePosition(_ position: OptionEntity) {

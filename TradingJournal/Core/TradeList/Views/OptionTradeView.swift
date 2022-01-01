@@ -53,12 +53,16 @@ struct OptionTradeView: View {
                     .onTapGesture {
                         segue(optionTrade: optionTrade)
                     }
-//                    .swipeActions {
-//                        Button("Burn") {
-//                            print("Right on!")
-//                        }
-//                        .tint(.red)
-//                    }
+                    .transition(.move(edge: .trailing))
+                    .swipeActions(allowsFullSwipe: true) {
+                        Button(role: .destructive) {
+                            withAnimation(.linear(duration: 3.0)) {
+                                viewModel.delete(optionTrade)
+                            }
+                        } label: {
+                            Label("Delete", systemImage: "trash.fill")
+                        }
+                    }
             }
         }
         .listStyle(.plain)

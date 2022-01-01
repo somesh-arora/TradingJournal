@@ -82,15 +82,24 @@ struct OptionDetailView: View {
     
     private var tradeActionView: some View {
         Menu {
-            Button("Close Position") {
-                closeTrade()
+            Button {
+                close()
+            } label: {
+                Label("Close", systemImage: "xmark")
             }
-            Button("Delete Position") {
-                deleteTrade()
+            
+            Button {
+                edit()
+            } label: {
+                Label("Edit", systemImage: "pencil")
             }
-            Button("Edit Position") {
-                editTrade()
+
+            Button(role: .destructive) {
+                delete()
+            } label: {
+                Label("Delete", systemImage: "trash.fill")
             }
+
         } label: {
             Image(systemName: "ellipsis")
                 .frame(width: 18, height: 18)
@@ -98,15 +107,15 @@ struct OptionDetailView: View {
         }
     }
     
-    private func deleteTrade() {
+    private func delete() {
 
     }
     
-    private func editTrade() {
+    private func edit() {
         
     }
     
-    private func closeTrade() {
+    private func close() {
         viewModel.showClosingTradeView.toggle()
     }
 }
