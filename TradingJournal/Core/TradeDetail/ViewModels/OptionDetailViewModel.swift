@@ -13,8 +13,6 @@ class OptionDetailViewModel: ObservableObject {
     @Published var statistics: [StatsModel] = []
     @Published var optionEntity: OptionEntity
     
-    private let optionTradeService = OptionTradeService()
-    
     private var cancellables = Set<AnyCancellable>()
     
     @Published var showClosingTradeView: Bool = false
@@ -31,11 +29,6 @@ class OptionDetailViewModel: ObservableObject {
                 self?.statistics = statistics
             }
             .store(in: &cancellables)
-    }
-    
-    func closeOptionTrade(data: CloseOptionTradeModel) {
-        optionTradeService.closeTrade(entity: optionEntity, data: data)
-        showClosingTradeView.toggle()
     }
     
     private func createStatisticArray(entity: OptionEntity) -> [StatsModel] {

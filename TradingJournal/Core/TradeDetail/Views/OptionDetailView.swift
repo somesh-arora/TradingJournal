@@ -26,9 +26,9 @@ struct OptionDetailView: View {
     
     @StateObject private var viewModel: OptionDetailViewModel
     
-    @State private var showActionSheet = false
+//    @Environment(\.presentationMode) var presentationMode
     
-    @Environment(\.presentationMode) var presentationMode
+    @State private var showCloseTradeForm = false
     
     private let columns: [GridItem] = [
         GridItem(.flexible()),
@@ -50,8 +50,8 @@ struct OptionDetailView: View {
             }
             .padding()
         }
-        .sheet(isPresented: $viewModel.showClosingTradeView) {
-            CloseTradeView(viewModel: viewModel)
+        .fullScreenCover(isPresented: $showCloseTradeForm) {
+            ClosePositionView(optionEntity: $viewModel.optionEntity, showCloseTradeForm: $showCloseTradeForm)
         }
         .navigationTitle(viewModel.optionEntity.stockSymbol ?? "")
         .navigationBarTitleDisplayMode(.inline)
@@ -82,20 +82,22 @@ struct OptionDetailView: View {
     
     private var tradeActionView: some View {
         Menu {
-            Button {
-                close()
-            } label: {
-                Label("Close", systemImage: "xmark")
+            if viewModel.optionEntity.isOpen {
+                Button {
+                    closeAction()
+                } label: {
+                    Label("Close", systemImage: "xmark")
+                }
             }
             
             Button {
-                edit()
+                editAction()
             } label: {
                 Label("Edit", systemImage: "pencil")
             }
 
             Button(role: .destructive) {
-                delete()
+                deleteAction()
             } label: {
                 Label("Delete", systemImage: "trash.fill")
             }
@@ -107,16 +109,16 @@ struct OptionDetailView: View {
         }
     }
     
-    private func delete() {
-
+    private func deleteAction() {
+        // TODO
     }
     
-    private func edit() {
-        
+    private func editAction() {
+        // TODO
     }
     
-    private func close() {
-        viewModel.showClosingTradeView.toggle()
+    private func closeAction() {
+        showCloseTradeForm.toggle()
     }
 }
 

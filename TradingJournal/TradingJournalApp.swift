@@ -25,6 +25,8 @@ struct TradingJournalApp: App {
         UITableView.appearance().showsVerticalScrollIndicator = false
         
         UITableViewCell.appearance().backgroundColor = .clear
+        
+        UITabBar.appearance().isHidden = true
     }
     
     var body: some Scene {

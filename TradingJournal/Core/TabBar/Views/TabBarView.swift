@@ -15,10 +15,6 @@ struct TabBarView: View {
     
     @State private var showNewTradeForm = false
     
-    init() {
-        UITabBar.appearance().isHidden = true
-    }
-    
     var body: some View {
         VStack(spacing: 0) {
             tabView
@@ -90,9 +86,9 @@ struct TabBarView: View {
                         .shadow(color: Color.theme.newTrade.opacity(0.15), radius: 5, x: 0, y: 8)
                 )
         }
-        .popover(isPresented: $showNewTradeForm, content: AddNewOptionView.init)
-//        .fullScreenCover(isPresented: $showNewTradeForm,
-//                         content: AddNewOptionView.init)
+//        .popover(isPresented: $showNewTradeForm, content: AddPositionView.init)
+        .fullScreenCover(isPresented: $showNewTradeForm,
+                         content: AddPositionView.init)
     }
 }
 

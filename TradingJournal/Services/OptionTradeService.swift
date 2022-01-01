@@ -54,12 +54,12 @@ extension OptionTradeService {
         if let optionPrice_open = Float(position.optionPrice_open) {
             entity.optionPrice_open = optionPrice_open
         }
-        if let stockPrice_open = Float(position.stockPrice_open) {
-            entity.stockPrice_open = stockPrice_open
-        }
-        if let collateral = Float(position.collateral) {
-            entity.collateral = collateral
-        }
+//        if let stockPrice_open = Float(position.stockPrice_open) {
+//            entity.stockPrice_open = stockPrice_open
+//        }
+//        if let collateral = Float(position.collateral) {
+//            entity.collateral = collateral
+//        }
         if let contractCount = Int16(position.contractCount) {
             entity.contractCount = contractCount
         }
@@ -69,15 +69,18 @@ extension OptionTradeService {
         applyChanges()
     }
     
-    func closeTrade(entity: OptionEntity, data: CloseOptionTradeModel) {
+    func closeTrade(entity: OptionEntity, data: ClosePositionModel) {
         guard let currentEntity = savedEntities.first(where: { $0.id == entity.id }), currentEntity.isOpen else {
             print("Cannot find entity")
             return
         }
-        if let closePrice = Float(data.closingPrice) {
-            currentEntity.optionPrice_close = closePrice
+        if let optionPrice_close = Float(data.optionPrice_close) {
+            currentEntity.optionPrice_close = optionPrice_close
         }
-        currentEntity.closeDate = data.closingDate
+//        if let stockPrice_close = Float(data.stockPrice_close) {
+//            currentEntity.stockPrice_close = stockPrice_close
+//        }
+        currentEntity.closeDate = data.closeDate
         currentEntity.isOpen = false
         applyChanges()
     }
