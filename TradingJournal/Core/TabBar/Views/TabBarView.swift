@@ -11,7 +11,7 @@ struct TabBarView: View {
     
     @State private var currentTab: TabBarItems = .home
     
-    @EnvironmentObject private var viewModel: OptionTradeViewModel
+    @EnvironmentObject private var viewModel: ManageOptionsViewModel
     
     init() {
         UITabBar.appearance().isHidden = true
@@ -33,11 +33,11 @@ struct TabBarView: View {
                         .modifier(BackgroundModifier())
                         .tag(item.imageName.lowercased())
                 case .newTrade:
-                    AddNewOptionView(viewModel: viewModel)
+                    AddNewOptionView()
                         .modifier(BackgroundModifier())
                         .tag(item.imageName.lowercased())
                 case .statistics:
-                    StatisticsContainerView(viewModel: StatisticsViewModel())
+                    StatisticsContainerView()
                         .modifier(BackgroundModifier())
                         .tag(item.imageName.lowercased())
                 }

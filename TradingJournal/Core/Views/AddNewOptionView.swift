@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NewOptionModel: Identifiable {
+struct NewPositionModel: Identifiable {
     let id = UUID().uuidString
     let stockSymbol: String
     let strategy: String
@@ -31,7 +31,7 @@ enum NewTrade: CaseIterable {
 }
 
 struct AddNewOptionView: View {
-    @ObservedObject var viewModel: OptionTradeViewModel
+    @EnvironmentObject private var viewModel: ManageOptionsViewModel
     
     @State private var stockSymbol: String = ""
     @State private var strategy: String = ""
@@ -140,7 +140,7 @@ struct AddNewOptionView: View {
     
     private var saveButtonView: some View {
         Button {
-            let data = NewOptionModel(stockSymbol: stockSymbol,
+            let position = NewPositionModel(stockSymbol: stockSymbol,
                                       strategy: strategy,
                                       optionPrice_open: optionPrice_open,
                                       stockPrice_open: stockPrice_open,
@@ -148,7 +148,7 @@ struct AddNewOptionView: View {
                                       contractCount: contractCount,
                                       openDate: openDate,
                                       expirationDate: expirationDate)
-            viewModel.addNewOptionTrade(data: data)
+            viewModel.addNewPosition(position)
         } label: {
             Text("Save")
                 .padding(.horizontal, 12)
@@ -168,6 +168,6 @@ struct AddNewOptionView: View {
 
 struct AddNewOptionView_Previews: PreviewProvider {
     static var previews: some View {
-        AddNewOptionView(viewModel: dev.optionTradeViewModel)
+        AddNewOptionView()
     }
 }

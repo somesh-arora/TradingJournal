@@ -21,7 +21,7 @@ class DeveloperPreview {
     
     private init() { }
     
-    let optionTradeViewModel = OptionTradeViewModel()
+    let manageOptionsViewModel = ManageOptionsViewModel()
     
     let optionDetailViewModel = OptionDetailViewModel(optionEntity: instance.openTrade)
     

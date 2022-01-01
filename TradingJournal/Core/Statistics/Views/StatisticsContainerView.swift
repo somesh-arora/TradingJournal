@@ -9,7 +9,9 @@ import SwiftUI
 
 struct StatisticsContainerView: View {
     
-    let viewModel: StatisticsViewModel
+    @EnvironmentObject private var viewModel: ManageOptionsViewModel
+    
+    let statisticsViewModel = StatisticsViewModel()
     
     var body: some View {
         VStack(spacing: 10) {
@@ -25,10 +27,10 @@ struct StatisticsContainerView: View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack {
                 // stats grid
-                StatsGridView(stats: viewModel.statsData)
+                StatsGridView(stats: statisticsViewModel.getStatsData(optionEntities: viewModel.optionEntities))
                 
                 // statistics grid
-                CircularProgressGridView(data: viewModel.circularProgressData)
+                CircularProgressGridView(data: statisticsViewModel.getProgressData(optionEntities: viewModel.optionEntities))
             }
         }
     }
@@ -36,6 +38,6 @@ struct StatisticsContainerView: View {
 
 struct StatisticsContainerView_Previews: PreviewProvider {
     static var previews: some View {
-        StatisticsContainerView(viewModel: StatisticsViewModel())
+        StatisticsContainerView()
     }
 }

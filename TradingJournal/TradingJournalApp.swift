@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct TradingJournalApp: App {
     
-    @StateObject private var viewModel = OptionTradeViewModel()
+    @StateObject private var viewModel = ManageOptionsViewModel()
     
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color.theme.accent)]

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct OptionTradeView: View {
     
-    @EnvironmentObject private var viewModel: OptionTradeViewModel
+    @EnvironmentObject private var viewModel: ManageOptionsViewModel
     
     @State private var selectedOptionTrade: OptionEntity? = nil
     @State private var showDetailView: Bool = false
@@ -17,7 +17,7 @@ struct OptionTradeView: View {
     var body: some View {
         VStack(spacing: 10) {
             LargeTitleView(title: "Positions")
-            if viewModel.optionTrades.isEmpty {
+            if viewModel.optionEntities.isEmpty {
                 emptyView
             } else {
                 optionTradeList
@@ -47,7 +47,7 @@ struct OptionTradeView: View {
     private var optionTradeList: some View {
         ScrollView(.vertical, showsIndicators: false) {
             LazyVStack(alignment: .leading, spacing: 12) {
-                ForEach(viewModel.optionTrades) { optionTrade in
+                ForEach(viewModel.optionEntities) { optionTrade in
                     OptionTradeRowView(optionTrade: optionTrade)
                         .background(Color.accentColor.opacity(0.08))
                         .cornerRadius(16)
@@ -71,7 +71,7 @@ struct OptionTradeViews_Previews: PreviewProvider {
             OptionTradeView()
                 .navigationBarHidden(true)
         }
-        .environmentObject(dev.optionTradeViewModel)
+        .environmentObject(dev.manageOptionsViewModel)
         
     }
 }
