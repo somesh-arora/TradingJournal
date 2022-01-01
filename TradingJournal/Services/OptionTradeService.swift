@@ -60,7 +60,9 @@ extension OptionTradeService {
         if let collateral = Float(position.collateral) {
             entity.collateral = collateral
         }
-        entity.contractCount = Int16(position.contractCount)
+        if let contractCount = Int16(position.contractCount) {
+            entity.contractCount = contractCount
+        }
         entity.openDate = position.openDate
         entity.expirationDate = position.expirationDate
         entity.isOpen = true

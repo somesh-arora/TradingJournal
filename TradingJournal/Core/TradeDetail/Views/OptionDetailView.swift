@@ -16,6 +16,7 @@ struct OptionDetailLoadingView: View {
         ZStack {
             if let optionEntity = optionEntity {
                 OptionDetailView(optionEntity: optionEntity)
+                    .modifier(BackgroundModifier())
             }
         }
     }

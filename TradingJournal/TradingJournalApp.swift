@@ -13,8 +13,18 @@ struct TradingJournalApp: App {
     @StateObject private var viewModel = ManageOptionsViewModel()
     
     init() {
+     setup()
+    }
+    
+    private func setup() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color.theme.accent)]
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color.theme.accent)]
+        
+        UITableView.appearance().backgroundColor = .clear
+        UITableView.appearance().separatorColor = .clear
+        UITableView.appearance().showsVerticalScrollIndicator = false
+        
+        UITableViewCell.appearance().backgroundColor = .clear
     }
     
     var body: some Scene {

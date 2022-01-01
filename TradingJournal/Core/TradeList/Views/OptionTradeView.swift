@@ -23,7 +23,7 @@ struct OptionTradeView: View {
                 optionTradeList
             }
         }
-        .padding()
+        .padding([.horizontal, .top])
         .background(
             NavigationLink(destination: OptionDetailLoadingView(optionEntity: $selectedOptionTrade),
                            isActive: $showDetailView,
@@ -45,18 +45,23 @@ struct OptionTradeView: View {
     }
     
     private var optionTradeList: some View {
-        ScrollView(.vertical, showsIndicators: false) {
-            LazyVStack(alignment: .leading, spacing: 12) {
-                ForEach(viewModel.optionEntities) { optionTrade in
-                    OptionTradeRowView(optionTrade: optionTrade)
-                        .background(Color.accentColor.opacity(0.08))
-                        .cornerRadius(16)
-                        .onTapGesture {
-                            segue(optionTrade: optionTrade)
-                        }
-                }
+        List {
+            ForEach(viewModel.optionEntities) { optionTrade in
+                OptionTradeRowView(optionTrade: optionTrade)
+                    .listRowInsets(.init(top: 6, leading: 0, bottom: 6, trailing: 0))
+                    .listRowBackground(Color.clear)
+                    .onTapGesture {
+                        segue(optionTrade: optionTrade)
+                    }
+//                    .swipeActions {
+//                        Button("Burn") {
+//                            print("Right on!")
+//                        }
+//                        .tint(.red)
+//                    }
             }
         }
+        .listStyle(.plain)
     }
     
     private func segue(optionTrade: OptionEntity) {

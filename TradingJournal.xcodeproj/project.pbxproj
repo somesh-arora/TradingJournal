@@ -38,6 +38,7 @@
 		BB22E1B9277C206B005853F2 /* LargeTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB22E1B8277C206B005853F2 /* LargeTitleView.swift */; };
 		BB22E1BE277C3D07005853F2 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB22E1BD277C3D07005853F2 /* CustomTextField.swift */; };
 		BB9D78A7277FE6E600C71982 /* ManageOptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9D78A6277FE6E600C71982 /* ManageOptionsViewModel.swift */; };
+		BB9D78AB27801CE000C71982 /* CustomDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9D78AA27801CE000C71982 /* CustomDatePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		BB22E1B8277C206B005853F2 /* LargeTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeTitleView.swift; sourceTree = "<group>"; };
 		BB22E1BD277C3D07005853F2 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		BB9D78A6277FE6E600C71982 /* ManageOptionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageOptionsViewModel.swift; sourceTree = "<group>"; };
+		BB9D78AA27801CE000C71982 /* CustomDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDatePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +201,7 @@
 				BB22E196277BEFAC005853F2 /* BackgroundModifier.swift */,
 				BB22E1B8277C206B005853F2 /* LargeTitleView.swift */,
 				BB22E1BD277C3D07005853F2 /* CustomTextField.swift */,
+				BB9D78AA27801CE000C71982 /* CustomDatePicker.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -446,6 +449,7 @@
 				BB22E1AC277C0C52005853F2 /* StatisticsContainerView.swift in Sources */,
 				BB0316CB277853A000FB108B /* OptionDetailViewModel.swift in Sources */,
 				BB0316B72778118800FB108B /* OptionTradeRowView.swift in Sources */,
+				BB9D78AB27801CE000C71982 /* CustomDatePicker.swift in Sources */,
 				BB22E1B9277C206B005853F2 /* LargeTitleView.swift in Sources */,
 				BB03169927779B8300FB108B /* TradingJournalApp.swift in Sources */,
 				BB0316BB2778265400FB108B /* Date.swift in Sources */,

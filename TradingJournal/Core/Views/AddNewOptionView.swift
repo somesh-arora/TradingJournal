@@ -14,7 +14,7 @@ struct NewPositionModel: Identifiable {
     let optionPrice_open: String
     let stockPrice_open: String
     let collateral: String
-    let contractCount: Int
+    let contractCount: String
     let openDate: Date
     let expirationDate: Date
 }
@@ -33,12 +33,14 @@ enum NewTrade: CaseIterable {
 struct AddNewOptionView: View {
     @EnvironmentObject private var viewModel: ManageOptionsViewModel
     
+    @Environment(\.presentationMode) var presentationMode
+    
     @State private var stockSymbol: String = ""
     @State private var strategy: String = ""
     @State private var optionPrice_open: String = ""
     @State private var stockPrice_open: String = ""
     @State private var collateral: String = ""
-    @State private var contractCount: Int = 0
+    @State private var contractCount: String = ""
     @State private var openDate: Date = Date()
     @State private var expirationDate: Date = Date()
     
@@ -52,6 +54,7 @@ struct AddNewOptionView: View {
         .padding()
         .navigationBarHidden(true)
         .navigationTitle("")
+        .modifier(BackgroundModifier())
     }
     
     private var headerView: some View {
@@ -68,74 +71,44 @@ struct AddNewOptionView: View {
                 ForEach(NewTrade.allCases, id: \.self) { section in
                     switch section {
                     case .stockSymbol:
-                        HStack(spacing: 10) {
-                            titleView("Ticker:")
-                            textField(placeholder: "Ex: MSFT, AAPL", text: $stockSymbol)
-//                            Image(systemName: "dollarsign.square")
-                        }
+                        CustomTextField(text: $stockSymbol,
+                                        headerText: "Ticker",
+                                        keyboardType: .alphabet,
+                                        textInputAutocapitalization: .characters)
                     case .strategy:
-                        HStack(spacing: 10) {
-                            titleView("Strategy:")
-                            textField(placeholder: "Ex: Iron Condor", text: $strategy)
-                        }
+                        CustomTextField(text: $strategy,
+                                        headerText: "Strategy",
+                                        keyboardType: .alphabet,
+                                        textInputAutocapitalization: .words)
                     case .optionPrice_open:
-                        HStack(spacing: 10) {
-                            titleView("Option Price:")
-                            textField(placeholder: "1.5", text: $optionPrice_open)
-                        }
+                        CustomTextField(text: $optionPrice_open,
+                                        headerText: "Option Price",
+                                        keyboardType: .decimalPad)
                     case .stockPrice_open:
-                        HStack(spacing: 10) {
-                            titleView("Stock Price:")
-                            textField(placeholder: "Ex: 200", text: $stockPrice_open)
-                        }
+                        CustomTextField(text: $stockPrice_open,
+                                        headerText: "Stock Price",
+                                        keyboardType: .numbersAndPunctuation)
                     case .collateral:
-                        HStack(spacing: 10) {
-                            titleView("Colletral:")
-                            textField(placeholder: "Ex: 1000", text: $collateral)
-                        }
+                        CustomTextField(text: $collateral,
+                                        headerText: "Colletral",
+                                        keyboardType: .numbersAndPunctuation,
+                                        textInputAutocapitalization: .characters)
                     case .contractCount:
-                        HStack(spacing: 10) {
-                            titleView("Contracts:")
-                            Stepper(value: $contractCount, in: 0...9999) {
-                                titleView("\(contractCount)")
-                            }
-                        }
+                        CustomTextField(text: $contractCount,
+                                        headerText: "Contracts",
+                                        keyboardType: .numberPad,
+                                        textInputAutocapitalization: .characters)
                     case .openDate:
-                        HStack(spacing: 10) {
-                            DatePicker(selection: $openDate, displayedComponents: .date) {
-                                titleView("Open Date:")
-                            }
-                        }
+                        CustomDatePicker(date: $openDate,
+                                         headerText: "Open Date")
                     case .expirationDate:
-                        HStack(spacing: 10) {
-                            DatePicker(selection: $expirationDate, displayedComponents: .date) {
-                                titleView("Expiration Date:")
-                            }
-                        }
+                        CustomDatePicker(date: $expirationDate,
+                                         headerText: "Expiration Date",
+                                         dateAfter: openDate)
                     }
                 }
             }
         }
-    }
-    
-    private func titleView(_ text: String) -> some View {
-        Text(text)
-            .font(.callout.bold())
-            .fontWeight(.heavy)
-            .multilineTextAlignment(.trailing)
-            .foregroundColor(Color.gray)
-            .padding(.horizontal)
-            .padding(.vertical, 10)
-            .background(Color.accentColor.opacity(0.08))
-            .cornerRadius(8)
-    }
-    
-    private func textField(placeholder: String, text: Binding<String>) -> some View {
-        TextField(placeholder, text: text)
-            .padding(.horizontal)
-            .padding(.vertical, 10)
-            .background(Color.accentColor.opacity(0.08))
-            .cornerRadius(8)
     }
     
     private var saveButtonView: some View {
@@ -149,6 +122,7 @@ struct AddNewOptionView: View {
                                       openDate: openDate,
                                       expirationDate: expirationDate)
             viewModel.addNewPosition(position)
+            presentationMode.wrappedValue.dismiss()
         } label: {
             Text("Save")
                 .padding(.horizontal, 12)

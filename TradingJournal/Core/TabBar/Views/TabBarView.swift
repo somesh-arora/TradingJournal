@@ -13,6 +13,8 @@ struct TabBarView: View {
     
     @EnvironmentObject private var viewModel: ManageOptionsViewModel
     
+    @State private var showNewTradeForm = false
+    
     init() {
         UITabBar.appearance().isHidden = true
     }
@@ -28,12 +30,8 @@ struct TabBarView: View {
         TabView(selection: $currentTab) {
             ForEach(TabBarItems.allCases, id: \.self) { item in
                 switch item {
-                case .home:
+                case .home, .newTrade:
                     OptionTradeView()
-                        .modifier(BackgroundModifier())
-                        .tag(item.imageName.lowercased())
-                case .newTrade:
-                    AddNewOptionView()
                         .modifier(BackgroundModifier())
                         .tag(item.imageName.lowercased())
                 case .statistics:
@@ -79,6 +77,7 @@ struct TabBarView: View {
         Button {
             withAnimation {
                 currentTab = item
+                showNewTradeForm.toggle()
             }
         } label: {
             Image(systemName: item.imageName)
@@ -91,6 +90,9 @@ struct TabBarView: View {
                         .shadow(color: Color.theme.newTrade.opacity(0.15), radius: 5, x: 0, y: 8)
                 )
         }
+        .popover(isPresented: $showNewTradeForm, content: AddNewOptionView.init)
+//        .fullScreenCover(isPresented: $showNewTradeForm,
+//                         content: AddNewOptionView.init)
     }
 }
 

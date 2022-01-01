@@ -15,10 +15,12 @@ struct OptionTradeRowView: View {
     var body: some View {
         HStack(spacing: 0) {
             leftView
-            Spacer(minLength: 10)
+            Spacer()
             rightView
         }
         .padding()
+        .background(Color.accentColor.opacity(0.08))
+        .cornerRadius(8)
     }
     
     private var leftView: some View {
