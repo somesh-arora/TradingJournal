@@ -9,12 +9,11 @@ import SwiftUI
 import CoreData
 
 struct OptionDetailLoadingView: View {
-    
-    @Binding var optionEntity: OptionEntity?
+    @EnvironmentObject private var viewModel: ManageOptionsViewModel
     
     var body: some View {
         ZStack {
-            if let optionEntity = optionEntity {
+            if let optionEntity = viewModel.selectedEntity {
                 OptionDetailView(optionEntity: optionEntity)
                     .modifier(BackgroundModifier())
             }
@@ -23,10 +22,7 @@ struct OptionDetailLoadingView: View {
 }
 
 struct OptionDetailView: View {
-    
     @StateObject private var viewModel: OptionDetailViewModel
-    
-//    @Environment(\.presentationMode) var presentationMode
     
     @State private var showCloseTradeForm = false
     

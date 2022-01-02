@@ -13,6 +13,8 @@ final class ManageOptionsViewModel: ObservableObject {
     
     @Published var optionEntities: [OptionEntity] = []
     
+    @Published var selectedEntity: OptionEntity? = nil
+    
     private let optionTradingService = OptionTradeService()
     
     private var cancellables = Set<AnyCancellable>()
@@ -23,9 +25,15 @@ final class ManageOptionsViewModel: ObservableObject {
     
     private func addSubscribers() {
         optionTradingService.$savedEntities
-            .receive(on: RunLoop.main)
+            .receive(on: DispatchQueue.main)
             .sink { [weak self] optionEntities in
-                self?.optionEntities = optionEntities
+                guard let self = self else { return }
+                self.optionEntities = optionEntities
+                
+                if self.selectedEntity != nil,
+                   let updatedEntity = optionEntities.first(where: { $0.id == self.selectedEntity?.id }) {
+                    self.selectedEntity = updatedEntity
+                }
             }
             .store(in: &cancellables)
     }

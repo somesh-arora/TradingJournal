@@ -11,7 +11,6 @@ struct OptionTradeView: View {
     
     @EnvironmentObject private var viewModel: ManageOptionsViewModel
     
-    @State private var selectedOptionTrade: OptionEntity? = nil
     @State private var showDetailView: Bool = false
     
     var body: some View {
@@ -24,13 +23,20 @@ struct OptionTradeView: View {
             }
         }
         .padding([.horizontal, .top])
-        .background(
-            NavigationLink(destination: OptionDetailLoadingView(optionEntity: $selectedOptionTrade),
-                           isActive: $showDetailView,
-                           label: { EmptyView() })
-        )
+        .background(optionDetailView)
         .navigationBarHidden(true)
         .navigationTitle("")
+    }
+    
+    @ViewBuilder
+    private var optionDetailView: some View {
+        if viewModel.selectedEntity != nil {
+            NavigationLink(isActive: $showDetailView) {
+                OptionDetailLoadingView()
+            } label: {
+                EmptyView()
+            }
+        }
     }
     
     private var emptyView: some View {
@@ -46,19 +52,17 @@ struct OptionTradeView: View {
     
     private var optionTradeList: some View {
         List {
-            ForEach(viewModel.optionEntities) { optionTrade in
-                OptionTradeRowView(optionTrade: optionTrade)
+            ForEach(viewModel.optionEntities) { entity in
+                OptionTradeRowView(optionTrade: entity)
                     .listRowInsets(.init(top: 6, leading: 0, bottom: 6, trailing: 0))
                     .listRowBackground(Color.clear)
                     .onTapGesture {
-                        segue(optionTrade: optionTrade)
+                        segue(selectedEntity: entity)
                     }
                     .transition(.move(edge: .trailing))
                     .swipeActions(allowsFullSwipe: true) {
                         Button(role: .destructive) {
-                            withAnimation(.linear(duration: 3.0)) {
-                                viewModel.delete(optionTrade)
-                            }
+                            viewModel.delete(entity)
                         } label: {
                             Label("Delete", systemImage: "trash.fill")
                         }
@@ -68,8 +72,8 @@ struct OptionTradeView: View {
         .listStyle(.plain)
     }
     
-    private func segue(optionTrade: OptionEntity) {
-        selectedOptionTrade = optionTrade
+    private func segue(selectedEntity: OptionEntity) {
+        viewModel.selectedEntity = selectedEntity
         showDetailView.toggle()
     }
 }

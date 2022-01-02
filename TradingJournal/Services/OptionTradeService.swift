@@ -50,18 +50,18 @@ extension OptionTradeService {
     
     func addNewPosition(_ position: NewPositionModel) {
         let entity = OptionEntity(context: container.viewContext)
-        entity.id = UUID()
+        entity.id = position.id
         entity.stockSymbol = position.stockSymbol
         entity.strategy = position.strategy
         if let optionPrice_open = Float(position.optionPrice_open) {
             entity.optionPrice_open = optionPrice_open
         }
-//        if let stockPrice_open = Float(position.stockPrice_open) {
-//            entity.stockPrice_open = stockPrice_open
-//        }
-//        if let collateral = Float(position.collateral) {
-//            entity.collateral = collateral
-//        }
+        //        if let stockPrice_open = Float(position.stockPrice_open) {
+        //            entity.stockPrice_open = stockPrice_open
+        //        }
+        //        if let collateral = Float(position.collateral) {
+        //            entity.collateral = collateral
+        //        }
         if let contractCount = Int16(position.contractCount) {
             entity.contractCount = contractCount
         }
@@ -72,20 +72,21 @@ extension OptionTradeService {
     }
     
     func closeTrade(entity: OptionEntity, data: ClosePositionModel) {
-        guard let currentEntity = savedEntities.first(where: { $0.id == entity.id }), currentEntity.isOpen else {
+        guard let entity = savedEntities.first(where: { $0.id == entity.id }), entity.isOpen else {
             print("Cannot find entity")
             return
         }
         if let optionPrice_close = Float(data.optionPrice_close) {
-            currentEntity.optionPrice_close = optionPrice_close
+            entity.optionPrice_close = optionPrice_close
         }
-        currentEntity.profit_loss = Utils().calculatePL(for: currentEntity)
-        currentEntity.profit_loss_percentage = Utils().calculatePLPercentage(for: currentEntity)
-//        if let stockPrice_close = Float(data.stockPrice_close) {
-//            currentEntity.stockPrice_close = stockPrice_close
-//        }
-        currentEntity.closeDate = data.closeDate
-        currentEntity.isOpen = false
+        entity.closeDate = data.closeDate
+        entity.profit_loss = Utils().calculatePL(for: entity)
+        entity.profit_loss_percentage = Utils().calculatePLPercentage(for: entity)
+        //        if let stockPrice_close = Float(data.stockPrice_close) {
+        //            currentEntity.stockPrice_close = stockPrice_close
+        //        }
+        
+        entity.isOpen = false
         applyChanges()
     }
     

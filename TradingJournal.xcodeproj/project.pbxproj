@@ -174,11 +174,11 @@
 		BB0316B32778114300FB108B /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				BB9D78AC2780E34F00C71982 /* ManageTrade */,
-				BB22E1BA277C3714005853F2 /* TradeList */,
-				BB22E19B277C0677005853F2 /* Statistics */,
 				BB22E190277BEDC0005853F2 /* TabBar */,
+				BB22E1BA277C3714005853F2 /* TradeList */,
+				BB9D78AC2780E34F00C71982 /* ManageTrade */,
 				BB22E198277C04DF005853F2 /* TradeDetail */,
+				BB22E19B277C0677005853F2 /* Statistics */,
 			);
 			path = Features;
 			sourceTree = "<group>";

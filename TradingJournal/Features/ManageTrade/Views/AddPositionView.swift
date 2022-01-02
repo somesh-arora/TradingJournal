@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NewPositionModel: Identifiable {
-    let id = UUID().uuidString
+    let id = UUID()
     let stockSymbol: String
     let strategy: String
     let optionPrice_open: String
@@ -146,7 +146,6 @@ struct AddPositionView: View {
         } label: {
             AddPosition.textLabel(for: AddPosition.strategy, text: $strategy)
         }
-        
     }
 }
 

@@ -44,27 +44,35 @@ final class StatisticsViewModel: ObservableObject {
     }
     
     private func biggestWin(optionEntities: [OptionEntity]) -> String {
-        let profit_loss = optionEntities.map { $0.profit_loss }
-        return Double(profit_loss.max() ?? 0.0).asCurrencyWith2Decimals()
+        let winningTrades = optionEntities.map { $0.profit_loss }.filter { $0 > 0.0 }
+        guard winningTrades.count > 0 else {
+            return "N/A"
+        }
+        return Double(winningTrades.max() ?? 0.0).asCurrencyWith2Decimals()
     }
     
     private func biggestLoss(optionEntities: [OptionEntity]) -> String {
-        let profit_loss = optionEntities.map { $0.profit_loss }
-        return Double(profit_loss.min() ?? 0.0).asCurrencyWith2Decimals()
+        let losingTrades = optionEntities.map { $0.profit_loss }.filter { $0 < 0.0 }
+        guard losingTrades.count > 0 else {
+            return "N/A"
+        }
+        return Double(losingTrades.min() ?? 0.0).asCurrencyWith2Decimals()
     }
     
     private func averagePL(optionEntities: [OptionEntity]) -> String {
-        let averageReturn = optionEntities.map { $0.profit_loss }.reduce(0, +)
-        return Double(averageReturn).asCurrencyWith2Decimals()
+        let closedTrades = optionEntities.filter { !$0.isOpen }
+        let profit_loss = closedTrades.map { $0.profit_loss }.reduce(0, +)
+        let averagePL = Double(profit_loss) / Double(closedTrades.count)
+        return averagePL.asCurrencyWith2Decimals()
     }
     
     private func winPercentage(optionEntities: [OptionEntity]) -> String {
-        guard optionEntities.count > 0 else {
+        let closedTrades = optionEntities.filter { !$0.isOpen }
+        let profitableTrades = closedTrades.map { $0.profit_loss }.filter { $0 > 0.0 }
+        guard closedTrades.count > 0 else {
             return "N/A"
         }
-        let totalTrades = Double(optionEntities.count)
-        let winningTrades = Double(optionEntities.map { $0.profit_loss }.filter { $0 >= 0.0 }.count)
-        let percentage = Double((winningTrades / totalTrades) * 100)
+        let percentage = Double((Double(profitableTrades.count) / Double(closedTrades.count)) * 100)
         return percentage.asPercentString()
     }
 }
