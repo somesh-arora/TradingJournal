@@ -44,6 +44,7 @@
 		BB9D78B32781342C00C71982 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9D78B22781342C00C71982 /* UIApplication.swift */; };
 		BB9D78B527813AB000C71982 /* OptionStrategies.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9D78B427813AB000C71982 /* OptionStrategies.swift */; };
 		BB9D78B727813ED300C71982 /* CustomTextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9D78B627813ED300C71982 /* CustomTextLabel.swift */; };
+		BB9D78B927814F4500C71982 /* OptionEntityCalculationsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9D78B827814F4500C71982 /* OptionEntityCalculationsHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +86,7 @@
 		BB9D78B22781342C00C71982 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		BB9D78B427813AB000C71982 /* OptionStrategies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionStrategies.swift; sourceTree = "<group>"; };
 		BB9D78B627813ED300C71982 /* CustomTextLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextLabel.swift; sourceTree = "<group>"; };
+		BB9D78B827814F4500C71982 /* OptionEntityCalculationsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionEntityCalculationsHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				BB22E18E277BE9B4005853F2 /* HapticManager.swift */,
+				BB9D78B827814F4500C71982 /* OptionEntityCalculationsHelper.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 				BB22E18F277BE9B4005853F2 /* HapticManager.swift in Sources */,
 				BB9D78B727813ED300C71982 /* CustomTextLabel.swift in Sources */,
 				BB0316A927779DEE00FB108B /* PreviewProvider.swift in Sources */,
+				BB9D78B927814F4500C71982 /* OptionEntityCalculationsHelper.swift in Sources */,
 				BB22E197277BEFAC005853F2 /* BackgroundModifier.swift in Sources */,
 				BB9D78A7277FE6E600C71982 /* ManageOptionsViewModel.swift in Sources */,
 				BB22E194277BEE01005853F2 /* TabBarItems.swift in Sources */,

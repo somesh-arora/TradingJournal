@@ -16,6 +16,8 @@ class OptionTradeService {
     
     @Published var savedEntities: [OptionEntity] = []
     
+    typealias Utils = OptionEntityCalculationsHelper
+    
     init() {
         container = NSPersistentContainer(name: containerName)
         container.loadPersistentStores { _, error in
@@ -77,6 +79,8 @@ extension OptionTradeService {
         if let optionPrice_close = Float(data.optionPrice_close) {
             currentEntity.optionPrice_close = optionPrice_close
         }
+        currentEntity.profit_loss = Utils().calculatePL(for: currentEntity)
+        currentEntity.profit_loss_percentage = Utils().calculatePLPercentage(for: currentEntity)
 //        if let stockPrice_close = Float(data.stockPrice_close) {
 //            currentEntity.stockPrice_close = stockPrice_close
 //        }
