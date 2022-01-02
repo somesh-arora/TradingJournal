@@ -118,7 +118,7 @@
 				BB0316B027780D8100FB108B /* Services */,
 				BB0316AC27780BD500FB108B /* Extensions */,
 				BB0316AB27780BCB00FB108B /* Models */,
-				BB0316B32778114300FB108B /* Core */,
+				BB0316B32778114300FB108B /* Features */,
 				BB03169827779B8300FB108B /* TradingJournalApp.swift */,
 				BB03169C27779B8500FB108B /* Assets.xcassets */,
 				BB03169E27779B8500FB108B /* Preview Content */,
@@ -164,7 +164,7 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		BB0316B32778114300FB108B /* Core */ = {
+		BB0316B32778114300FB108B /* Features */ = {
 			isa = PBXGroup;
 			children = (
 				BB9D78AC2780E34F00C71982 /* ManageTrade */,
@@ -173,7 +173,7 @@
 				BB22E190277BEDC0005853F2 /* TabBar */,
 				BB22E198277C04DF005853F2 /* TradeDetail */,
 			);
-			path = Core;
+			path = Features;
 			sourceTree = "<group>";
 		};
 		BB0316B42778114E00FB108B /* Views */ = {
