@@ -43,6 +43,7 @@ struct AddPositionView: View {
         .navigationBarHidden(true)
         .navigationTitle("")
         .modifier(BackgroundModifier())
+        .ignoresSafeArea(.keyboard)
     }
     
     private var headerView: some View {

@@ -17,5 +17,8 @@ struct BackgroundModifier: ViewModifier {
                 Color.theme.background
                     .ignoresSafeArea()
             )
+            .onTapGesture {
+                UIApplication.shared.endEditing()
+            }
     }
 }

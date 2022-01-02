@@ -79,13 +79,17 @@ enum AddPosition: CaseIterable {
         case .stockSymbol,
                 .strategy,
                 .optionPrice_open,
-//                .stockPrice_open,
-//                .collateral,
+            //                .stockPrice_open,
+            //                .collateral,
                 .contractCount:
-            return AnyView(CustomTextField(text: text,
-                                           headerText: type.headerText,
-                                           keyboardType: type.keyboardType,
-                                           textInputAutocapitalization: type.autocapitalization))
+            return AnyView(
+                CustomTextField(text: text,
+                                headerText: type.headerText,
+                                keyboardType: type.keyboardType,
+                                textInputAutocapitalization: type.autocapitalization)
+                    .id(type.headerText.lowercased())
+                    .onTapGesture { }
+            )
         default:
             return AnyView(EmptyView())
         }

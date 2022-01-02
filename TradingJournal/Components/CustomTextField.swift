@@ -53,6 +53,12 @@ struct CustomTextField: View {
                     withAnimation(.easeIn) {
                         isTapped = true
                     }
+                } else {
+                    if text.isEmpty {
+                        withAnimation(.easeOut) {
+                            isTapped = false
+                        }
+                    }
                 }
             } onCommit: {
                 // triggered when return button is tapped..

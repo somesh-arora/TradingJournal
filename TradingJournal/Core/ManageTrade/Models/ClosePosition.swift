@@ -42,10 +42,14 @@ enum ClosePosition: CaseIterable {
     static func textField(for type: ClosePosition, text: Binding<String>) -> some View {
         switch type {
         case .optionPrice_close:
-            return AnyView(CustomTextField(text: text,
-                                           headerText: type.headerText,
-                                           keyboardType: type.keyboardType,
-                                           textInputAutocapitalization: type.autocapitalization))
+            return AnyView(
+                CustomTextField(text: text,
+                                headerText: type.headerText,
+                                keyboardType: type.keyboardType,
+                                textInputAutocapitalization: type.autocapitalization)
+                    .id(type.headerText.lowercased())
+                    .onTapGesture { }
+            )
         default:
             return AnyView(EmptyView())
         }
