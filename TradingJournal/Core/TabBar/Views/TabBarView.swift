@@ -25,16 +25,7 @@ struct TabBarView: View {
     private var tabView: some View {
         TabView(selection: $currentTab) {
             ForEach(TabBarItems.allCases, id: \.self) { item in
-                switch item {
-                case .home, .newTrade:
-                    OptionTradeView()
-                        .modifier(BackgroundModifier())
-                        .tag(item.imageName.lowercased())
-                case .statistics:
-                    StatisticsContainerView()
-                        .modifier(BackgroundModifier())
-                        .tag(item.imageName.lowercased())
-                }
+                item.view
             }
         }
     }
@@ -72,7 +63,6 @@ struct TabBarView: View {
     private func newTradeButton(item: TabBarItems) -> some View {
         Button {
             withAnimation {
-                currentTab = item
                 showNewTradeForm.toggle()
             }
         } label: {

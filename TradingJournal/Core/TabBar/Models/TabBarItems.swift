@@ -34,4 +34,23 @@ enum TabBarItems: CaseIterable {
             return "chart.line.uptrend.xyaxis"
         }
     }
+    
+    var view: some View {
+        switch self {
+        case .home:
+            return AnyView(
+                OptionTradeView()
+                    .modifier(BackgroundModifier())
+                    .tag(imageName.lowercased())
+            )
+        case .newTrade:
+            return AnyView(EmptyView())
+        case .statistics:
+            return AnyView(
+                StatisticsContainerView()
+                    .modifier(BackgroundModifier())
+                    .tag(imageName.lowercased())
+            )
+        }
+    }
 }
