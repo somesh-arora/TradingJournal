@@ -92,7 +92,7 @@ struct ClosePositionView: View {
     private var closeButtonLabel: some View {
         Text("Close")
             .padding()
-            .font(.callout.bold())
+            .font(.title3.bold())
             .foregroundColor(.white)
             .frame(maxWidth: .infinity)
             .background(

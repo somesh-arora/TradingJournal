@@ -75,32 +75,19 @@ enum AddPosition: CaseIterable {
     }
     
     static func textField(for type: AddPosition, text: Binding<String>) -> some View {
-        switch type {
-        case .stockSymbol,
-                .strategy,
-                .optionPrice_open,
-            //                .stockPrice_open,
-            //                .collateral,
-                .contractCount:
-            return AnyView(
-                CustomTextField(text: text,
-                                headerText: type.headerText,
-                                keyboardType: type.keyboardType,
-                                textInputAutocapitalization: type.autocapitalization)
-                    .id(type.headerText.lowercased())
-                    .onTapGesture { }
-            )
-        default:
-            return AnyView(EmptyView())
-        }
+        return CustomTextField(text: text,
+                               headerText: type.headerText,
+                               keyboardType: type.keyboardType,
+                               textInputAutocapitalization: type.autocapitalization)
+            .id(type.headerText.lowercased())
+            .onTapGesture { }
     }
     
     static func datePicker(for type: AddPosition, date: Binding<Date>, dateAfter: Date? = nil) -> some View {
-        switch type {
-        case .openDate, .expirationDate:
-            return AnyView(CustomDatePicker(date: date, headerText: type.headerText, dateAfter: dateAfter))
-        default:
-            return AnyView(EmptyView())
-        }
+        return CustomDatePicker(date: date, headerText: type.headerText, dateAfter: dateAfter)
+    }
+    
+    static func textLabel(for type: AddPosition, text: Binding<String>) -> some View {
+        return CustomTextLabel(text: text, headerText: type.headerText)
     }
 }

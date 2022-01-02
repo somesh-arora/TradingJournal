@@ -24,7 +24,7 @@ struct CustomDatePicker: View {
     var body: some View {
         datePicker
             .padding(.horizontal)
-            .padding(.vertical, 10)
+            .padding(.vertical, 5)
             .background(Color.accentColor.opacity(0.08))
             .cornerRadius(8)
     }

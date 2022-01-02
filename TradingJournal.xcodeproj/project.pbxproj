@@ -42,6 +42,8 @@
 		BB9D78AF2780E39700C71982 /* AddPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9D78AE2780E39700C71982 /* AddPosition.swift */; };
 		BB9D78B12780EB0500C71982 /* ClosePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9D78B02780EB0500C71982 /* ClosePosition.swift */; };
 		BB9D78B32781342C00C71982 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9D78B22781342C00C71982 /* UIApplication.swift */; };
+		BB9D78B527813AB000C71982 /* OptionStrategies.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9D78B427813AB000C71982 /* OptionStrategies.swift */; };
+		BB9D78B727813ED300C71982 /* CustomTextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9D78B627813ED300C71982 /* CustomTextLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +83,8 @@
 		BB9D78AE2780E39700C71982 /* AddPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPosition.swift; sourceTree = "<group>"; };
 		BB9D78B02780EB0500C71982 /* ClosePosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosePosition.swift; sourceTree = "<group>"; };
 		BB9D78B22781342C00C71982 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		BB9D78B427813AB000C71982 /* OptionStrategies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionStrategies.swift; sourceTree = "<group>"; };
+		BB9D78B627813ED300C71982 /* CustomTextLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,7 @@
 			children = (
 				BB0316AD27780CB200FB108B /* OptionTrades.xcdatamodeld */,
 				BB9D78A6277FE6E600C71982 /* ManageOptionsViewModel.swift */,
+				BB9D78B427813AB000C71982 /* OptionStrategies.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -209,6 +214,7 @@
 				BB22E1B8277C206B005853F2 /* LargeTitleView.swift */,
 				BB22E1BD277C3D07005853F2 /* CustomTextField.swift */,
 				BB9D78AA27801CE000C71982 /* CustomDatePicker.swift */,
+				BB9D78B627813ED300C71982 /* CustomTextLabel.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -463,6 +469,7 @@
 				BB22E1BE277C3D07005853F2 /* CustomTextField.swift in Sources */,
 				BB22E1A4277C0790005853F2 /* CircularProgressModel.swift in Sources */,
 				BB22E18F277BE9B4005853F2 /* HapticManager.swift in Sources */,
+				BB9D78B727813ED300C71982 /* CustomTextLabel.swift in Sources */,
 				BB0316A927779DEE00FB108B /* PreviewProvider.swift in Sources */,
 				BB22E197277BEFAC005853F2 /* BackgroundModifier.swift in Sources */,
 				BB9D78A7277FE6E600C71982 /* ManageOptionsViewModel.swift in Sources */,
@@ -485,6 +492,7 @@
 				BB22E1AE277C0CD7005853F2 /* StatisticsViewModel.swift in Sources */,
 				BB0316BF2778292C00FB108B /* Double.swift in Sources */,
 				BB0316BD277827F000FB108B /* Calender.swift in Sources */,
+				BB9D78B527813AB000C71982 /* OptionStrategies.swift in Sources */,
 				BB22E192277BEDE4005853F2 /* TabBarView.swift in Sources */,
 				BB0316CD27797AEA00FB108B /* Color.swift in Sources */,
 			);

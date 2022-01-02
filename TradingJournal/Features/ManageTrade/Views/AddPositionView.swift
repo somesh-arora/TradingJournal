@@ -80,13 +80,13 @@ struct AddPositionView: View {
             case .stockSymbol:
                 AddPosition.textField(for: section, text: $stockSymbol)
             case .strategy:
-                AddPosition.textField(for: section, text: $strategy)
+                strategySection
             case .optionPrice_open:
                 AddPosition.textField(for: section, text: $optionPrice_open)
-//            case .stockPrice_open:
-//                AddPosition.textField(for: section, text: $stockPrice_open)
-//            case .collateral:
-//                AddPosition.textField(for: section, text: $collateral)
+                //            case .stockPrice_open:
+                //                AddPosition.textField(for: section, text: $stockPrice_open)
+                //            case .collateral:
+                //                AddPosition.textField(for: section, text: $collateral)
             case .contractCount:
                 AddPosition.textField(for: section, text: $contractCount)
             case .openDate:
@@ -110,7 +110,7 @@ struct AddPositionView: View {
     private var addButtonLabel: some View {
         Text("Add")
             .padding()
-            .font(.callout.bold())
+            .font(.title3.bold())
             .foregroundColor(.white)
             .frame(maxWidth: .infinity)
             .background(
@@ -130,6 +130,23 @@ struct AddPositionView: View {
                                   expirationDate: expirationDate)
         viewModel.addNewPosition(position)
         presentationMode.wrappedValue.dismiss()
+    }
+    
+    private var strategySection: some View {
+        Menu {
+            ForEach(OptionStrategies.allCases, id: \.self) { strategy in
+                Button {
+                    withAnimation(.none) {
+                        self.strategy = strategy.rawValue
+                    }
+                } label: {
+                    Text(strategy.rawValue)
+                }
+            }
+        } label: {
+            AddPosition.textLabel(for: AddPosition.strategy, text: $strategy)
+        }
+        
     }
 }
 
