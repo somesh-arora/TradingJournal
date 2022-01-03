@@ -121,20 +121,20 @@ struct AddPositionView: View {
     
     private func addAction() {
         let position = NewPositionModel(stockSymbol: stockSymbol,
-                                  strategy: strategy,
-                                  optionPrice_open: optionPrice_open,
-//                                      stockPrice_open: stockPrice_open,
-//                                      collateral: collateral,
-                                  contractCount: contractCount,
-                                  openDate: openDate,
-                                  expirationDate: expirationDate)
+                                        strategy: strategy,
+                                        optionPrice_open: optionPrice_open,
+                                        //stockPrice_open: stockPrice_open,
+                                        //collateral: collateral,
+                                        contractCount: contractCount,
+                                        openDate: openDate,
+                                        expirationDate: expirationDate)
         viewModel.addNewPosition(position)
         presentationMode.wrappedValue.dismiss()
     }
     
     private var strategySection: some View {
         Menu {
-            ForEach(OptionStrategies.allCases, id: \.self) { strategy in
+            ForEach(OptionStrategy.allCases, id: \.self) { strategy in
                 Button {
                     withAnimation(.none) {
                         self.strategy = strategy.rawValue

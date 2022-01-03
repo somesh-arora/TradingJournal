@@ -38,15 +38,18 @@ struct OptionTradeRowView: View {
         HStack(spacing: 5) {
             Text(optionEntity.strategy ?? "")
                 .font(.caption)
-            Text("x\(optionEntity.contractCount)")
-                .font(.system(size: 10))
-                .bold()
-                .padding(.horizontal, 5)
-                .padding(.vertical, 4)
-                .background(
-                    Capsule()
-                        .fill(Color.teal.opacity(0.6))
-                )
+            
+            if optionEntity.contractCount > 1 {
+                Text("x\(optionEntity.contractCount)")
+                    .font(.system(size: 12))
+                    .bold()
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 4)
+                    .background(
+                        Capsule()
+                            .fill(Color.theme.background.opacity(0.4))
+                    )
+            }
         }
     }
     
@@ -79,13 +82,11 @@ struct OptionTradeRowView: View {
     
     private var profitLossBackgroundView: some View {
         RoundedRectangle(cornerRadius: 8)
-            .fill(optionEntity.optionPrice_open - optionEntity.optionPrice_close >= 0.0 ? Color.theme.green : Color.theme.red)
+            .fill(optionEntity.profit_loss >= 0.0 ? Color.theme.green : Color.theme.red)
     }
     
     func getPLNumber() -> String {
-        let difference = optionEntity.optionPrice_open - optionEntity.optionPrice_close
-        let actualPrice = difference * 100.0 * Float(optionEntity.contractCount)
-        return Double(actualPrice).asCurrencyWith2Decimals()
+        return Double(optionEntity.profit_loss).asCurrencyWith2Decimals()
     }
 }
 

@@ -42,10 +42,11 @@
 		BB9D78AF2780E39700C71982 /* AddPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9D78AE2780E39700C71982 /* AddPosition.swift */; };
 		BB9D78B12780EB0500C71982 /* ClosePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9D78B02780EB0500C71982 /* ClosePosition.swift */; };
 		BB9D78B32781342C00C71982 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9D78B22781342C00C71982 /* UIApplication.swift */; };
-		BB9D78B527813AB000C71982 /* OptionStrategies.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9D78B427813AB000C71982 /* OptionStrategies.swift */; };
+		BB9D78B527813AB000C71982 /* OptionStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9D78B427813AB000C71982 /* OptionStrategy.swift */; };
 		BB9D78B727813ED300C71982 /* CustomTextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9D78B627813ED300C71982 /* CustomTextLabel.swift */; };
 		BB9D78B927814F4500C71982 /* OptionEntityCalculationsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9D78B827814F4500C71982 /* OptionEntityCalculationsHelper.swift */; };
 		BB9D78BB2782679300C71982 /* EmptyOptionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9D78BA2782679300C71982 /* EmptyOptionsListView.swift */; };
+		BB9D78C22782B0A500C71982 /* OptionPremiumType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9D78C12782B0A500C71982 /* OptionPremiumType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,10 +86,11 @@
 		BB9D78AE2780E39700C71982 /* AddPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPosition.swift; sourceTree = "<group>"; };
 		BB9D78B02780EB0500C71982 /* ClosePosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosePosition.swift; sourceTree = "<group>"; };
 		BB9D78B22781342C00C71982 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
-		BB9D78B427813AB000C71982 /* OptionStrategies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionStrategies.swift; sourceTree = "<group>"; };
+		BB9D78B427813AB000C71982 /* OptionStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionStrategy.swift; sourceTree = "<group>"; };
 		BB9D78B627813ED300C71982 /* CustomTextLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextLabel.swift; sourceTree = "<group>"; };
 		BB9D78B827814F4500C71982 /* OptionEntityCalculationsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionEntityCalculationsHelper.swift; sourceTree = "<group>"; };
 		BB9D78BA2782679300C71982 /* EmptyOptionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyOptionsListView.swift; sourceTree = "<group>"; };
+		BB9D78C12782B0A500C71982 /* OptionPremiumType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionPremiumType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +149,8 @@
 			children = (
 				BB0316AD27780CB200FB108B /* OptionTrades.xcdatamodeld */,
 				BB9D78A6277FE6E600C71982 /* ManageOptionsViewModel.swift */,
-				BB9D78B427813AB000C71982 /* OptionStrategies.swift */,
+				BB9D78B427813AB000C71982 /* OptionStrategy.swift */,
+				BB9D78C12782B0A500C71982 /* OptionPremiumType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB9D78C22782B0A500C71982 /* OptionPremiumType.swift in Sources */,
 				BB0316B227780DAF00FB108B /* OptionTradeService.swift in Sources */,
 				BB0316C5277850BD00FB108B /* OptionDetailView.swift in Sources */,
 				BB0316CF2779812100FB108B /* ClosePositionView.swift in Sources */,
@@ -500,7 +504,7 @@
 				BB22E1AE277C0CD7005853F2 /* StatisticsViewModel.swift in Sources */,
 				BB0316BF2778292C00FB108B /* Double.swift in Sources */,
 				BB0316BD277827F000FB108B /* Calender.swift in Sources */,
-				BB9D78B527813AB000C71982 /* OptionStrategies.swift in Sources */,
+				BB9D78B527813AB000C71982 /* OptionStrategy.swift in Sources */,
 				BB22E192277BEDE4005853F2 /* TabBarView.swift in Sources */,
 				BB0316CD27797AEA00FB108B /* Color.swift in Sources */,
 			);

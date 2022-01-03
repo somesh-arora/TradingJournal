@@ -44,16 +44,15 @@ final class OptionDetailViewModel: ObservableObject {
             statisticsArray.append( StatsModel(title: entity.isOpen ? "Expires On" : "Expired on", value: expirationDate.mediumStyleFormatting()))
         }
         
-        if let closeDate = entity.closeDate, !entity.isOpen {
+        if !entity.isOpen, let closeDate = entity.closeDate {
             statisticsArray.append( StatsModel(title: "Closed On", value: closeDate.mediumStyleFormatting()))
         }
         
         if !entity.isOpen {
-            let difference = entity.optionPrice_open - entity.optionPrice_close
-            let actualPrice = difference * 100.0 * Float(entity.contractCount)
-            
-            statisticsArray.append(StatsModel(title: "P/L", value: Double(actualPrice).asCurrencyWith2Decimals()))
+            statisticsArray.append(StatsModel(title: "P/L", value: Double(entity.profit_loss).asCurrencyWith2Decimals()))
+            statisticsArray.append(StatsModel(title: "P/L Percentage", value: Double(entity.profit_loss_percentage).asPercentString()))
         }
+        
         return statisticsArray
     }
 }

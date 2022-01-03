@@ -50,7 +50,7 @@ struct CustomTextLabel: View {
 
 struct CustomTextLabel_Previews: PreviewProvider {
     static var previews: some View {
-        CustomTextLabel(text: .constant(OptionStrategies.callCreditSpread.rawValue),
+        CustomTextLabel(text: .constant(OptionStrategy.callCreditSpread.rawValue),
                         headerText: "Strategies")
     }
 }
