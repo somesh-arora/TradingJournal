@@ -15,10 +15,12 @@ struct OptionTradeView: View {
     
     var body: some View {
         VStack(spacing: 10) {
-            LargeTitleView(title: "Positions")
             if viewModel.optionEntities.isEmpty {
-                emptyView
+                EmptyOptionsListView()
+//                    .transition(.opacity.animation(.easeInOut))
+//                    .transition(AnyTransition.opacity.animation(.easeIn))
             } else {
+                LargeTitleView(title: "Positions")
                 optionTradeList
             }
         }
@@ -32,7 +34,7 @@ struct OptionTradeView: View {
     private var optionDetailView: some View {
         if viewModel.selectedEntity != nil {
             NavigationLink(isActive: $showDetailView) {
-                OptionDetailLoadingView()
+                OptionDetailView()
             } label: {
                 EmptyView()
             }
@@ -53,7 +55,7 @@ struct OptionTradeView: View {
     private var optionTradeList: some View {
         List {
             ForEach(viewModel.optionEntities) { entity in
-                OptionTradeRowView(optionTrade: entity)
+                OptionTradeRowView(optionEntity: entity)
                     .listRowInsets(.init(top: 6, leading: 0, bottom: 6, trailing: 0))
                     .listRowBackground(Color.clear)
                     .onTapGesture {
@@ -85,6 +87,5 @@ struct OptionTradeViews_Previews: PreviewProvider {
                 .navigationBarHidden(true)
         }
         .environmentObject(dev.manageOptionsViewModel)
-        
     }
 }

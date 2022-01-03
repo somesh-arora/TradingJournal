@@ -10,7 +10,7 @@ import CoreData
 
 struct OptionTradeRowView: View {
     
-    let optionTrade: OptionEntity
+    @StateObject var optionEntity: OptionEntity
     
     var body: some View {
         HStack(spacing: 0) {
@@ -31,14 +31,14 @@ struct OptionTradeRowView: View {
     }
     
     private var titleView: some View {
-        Text(optionTrade.stockSymbol ?? "")
+        Text(optionEntity.stockSymbol ?? "")
     }
     
     private var subtitleView: some View {
         HStack(spacing: 5) {
-            Text(optionTrade.strategy ?? "")
+            Text(optionEntity.strategy ?? "")
                 .font(.caption)
-            Text("x\(optionTrade.contractCount)")
+            Text("x\(optionEntity.contractCount)")
                 .font(.system(size: 10))
                 .bold()
                 .padding(.horizontal, 5)
@@ -52,11 +52,11 @@ struct OptionTradeRowView: View {
     
     @ViewBuilder
     private var rightView: some View {
-        if optionTrade.isOpen {
+        if optionEntity.isOpen {
             expirationDateView
         }
         
-        if !optionTrade.isOpen {
+        if !optionEntity.isOpen {
             profileLossView
         }
     }
@@ -64,7 +64,7 @@ struct OptionTradeRowView: View {
     private var expirationDateView: some View {
         HStack(spacing: 2) {
             Image(systemName: "hourglass")
-            Text(Calendar.current.numberOfDaysBetween(Date(), and: optionTrade.expirationDate ?? Date()))
+            Text(Calendar.current.numberOfDaysBetween(Date(), and: optionEntity.expirationDate ?? Date()))
         }
     }
     
@@ -72,17 +72,19 @@ struct OptionTradeRowView: View {
         Text(getPLNumber())
             .font(.body)
             .bold()
-            .padding(.horizontal, 5)
-            .padding(.vertical, 3)
-            .background(
-                RoundedRectangle(cornerRadius: 8)
-                    .fill(optionTrade.optionPrice_open - optionTrade.optionPrice_close > 0.0 ? Color.theme.green : Color.theme.red)
-            )
+            .padding(.horizontal, 8)
+            .padding(.vertical, 5)
+            .background(profitLossBackgroundView)
+    }
+    
+    private var profitLossBackgroundView: some View {
+        RoundedRectangle(cornerRadius: 8)
+            .fill(optionEntity.optionPrice_open - optionEntity.optionPrice_close >= 0.0 ? Color.theme.green : Color.theme.red)
     }
     
     func getPLNumber() -> String {
-        let difference = optionTrade.optionPrice_open - optionTrade.optionPrice_close
-        let actualPrice = difference * 100.0 * Float(optionTrade.contractCount)
+        let difference = optionEntity.optionPrice_open - optionEntity.optionPrice_close
+        let actualPrice = difference * 100.0 * Float(optionEntity.contractCount)
         return Double(actualPrice).asCurrencyWith2Decimals()
     }
 }
@@ -90,24 +92,23 @@ struct OptionTradeRowView: View {
 struct OptionTradeRowView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            OptionTradeRowView(optionTrade: dev.openTrade)
+            OptionTradeRowView(optionEntity: dev.openTrade)
                 .previewLayout(.sizeThatFits)
                 .environment(\.managedObjectContext, NSPersistentContainer(name: "OptionTrades").viewContext)
             
-            OptionTradeRowView(optionTrade: dev.openTrade)
+            OptionTradeRowView(optionEntity: dev.openTrade)
                 .previewLayout(.sizeThatFits)
                 .preferredColorScheme(.dark)
                 .environment(\.managedObjectContext, NSPersistentContainer(name: "OptionTrades").viewContext)
             
-            OptionTradeRowView(optionTrade: dev.closedTrade)
+            OptionTradeRowView(optionEntity: dev.openTrade)
                 .previewLayout(.sizeThatFits)
                 .environment(\.managedObjectContext, NSPersistentContainer(name: "OptionTrades").viewContext)
             
-            OptionTradeRowView(optionTrade: dev.closedTrade)
+            OptionTradeRowView(optionEntity: dev.openTrade)
                 .previewLayout(.sizeThatFits)
                 .preferredColorScheme(.dark)
                 .environment(\.managedObjectContext, NSPersistentContainer(name: "OptionTrades").viewContext)
         }
-        
     }
 }

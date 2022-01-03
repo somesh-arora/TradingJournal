@@ -17,8 +17,6 @@ struct ClosePositionView: View {
     
     @EnvironmentObject private var viewModel: ManageOptionsViewModel
     
-    @Binding var optionEntity: OptionEntity
-    
     @Binding var showCloseTradeForm: Bool
     
     @State private var optionPrice_close: String = ""
@@ -102,16 +100,18 @@ struct ClosePositionView: View {
     }
     
     private func closeAction() {
-        let data = ClosePositionModel(optionPrice_close: optionPrice_close,
-//                                          stockPrice_close: stockPrice_close,
-                                      closeDate: closeDate)
-        viewModel.closePosition(optionEntity, data: data)
-        showCloseTradeForm.toggle()
+        if let entity = viewModel.selectedEntity {
+            let data = ClosePositionModel(optionPrice_close: optionPrice_close,
+    //                                          stockPrice_close: stockPrice_close,
+                                          closeDate: closeDate)
+            viewModel.closePosition(entity, data: data)
+            showCloseTradeForm.toggle()
+        }
     }
 }
 
 struct CloseTradeView_Previews: PreviewProvider {
     static var previews: some View {
-        ClosePositionView(optionEntity: .constant(dev.closedTrade), showCloseTradeForm: .constant(true))
+        ClosePositionView(showCloseTradeForm: .constant(true))
     }
 }

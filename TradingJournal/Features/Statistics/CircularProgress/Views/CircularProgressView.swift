@@ -11,29 +11,31 @@ struct CircularProgressView: View {
     
     let model: CircularProgressModel
     
-    let frame: CGFloat = (UIScreen.main.bounds.width - 150) / 2
+    let frame: CGFloat = (UIScreen.main.bounds.width) / 3
     
     var body: some View {
         VStack(spacing: 32) {
-            titleView
+            headerView
             progressView
+            if model.footer != nil {
+                footerView
+            }
         }
+        .frame(maxWidth: .infinity)
         .padding()
         .background(Color.accentColor.opacity(0.05))
         .cornerRadius(16)
     }
     
-    private var titleView: some View {
-        VStack(alignment: .center, spacing: 4) {
+    private var headerView: some View {
+        VStack(alignment: .center, spacing: 6) {
             Text(model.header)
                 .font(.system(size: 18))
                 .fontWeight(.bold)
             
-            if let footer = model.footer {
-                Text(footer)
-                    .font(.footnote)
-                    .foregroundColor(Color.theme.secondary)
-            }
+            Text(model.subheader)
+                .font(.footnote)
+                .foregroundColor(Color.theme.secondary)
         }
     }
     
@@ -57,6 +59,12 @@ struct CircularProgressView: View {
         }
         .rotationEffect(.init(degrees: -90))
         .shadow(color: model.progressColor.opacity(0.25), radius: 10, x: 0, y: 0)
+    }
+    
+    private var footerView: some View {
+        Text(model.footer ?? "")
+            .font(.footnote.bold())
+            .foregroundColor(Color.theme.secondary)
     }
 }
 

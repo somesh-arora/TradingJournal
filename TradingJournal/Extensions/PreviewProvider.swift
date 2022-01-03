@@ -23,9 +23,9 @@ class DeveloperPreview {
     
     let manageOptionsViewModel = ManageOptionsViewModel()
     
-    let optionDetailViewModel = OptionDetailViewModel(optionEntity: instance.openTrade)
+    let optionDetailViewModel = OptionDetailViewModel()
     
-    let circularProgressModel = CircularProgressModel(header: "Target", currentValue: 1200, targetValue: 10000, progressColor: Color.theme.accent, footer: "$10,000")
+    let circularProgressModel = CircularProgressModel(header: "Target", subheader: "$10,000", currentValue: 2000, targetValue: 10000, progressColor: Color.theme.accent, footer: "Current: $2,000")
     
     let openTrade: OptionEntity = {
         let item = OptionEntity(context: NSPersistentContainer(name: "OptionTrades").viewContext)

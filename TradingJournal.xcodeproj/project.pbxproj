@@ -45,6 +45,7 @@
 		BB9D78B527813AB000C71982 /* OptionStrategies.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9D78B427813AB000C71982 /* OptionStrategies.swift */; };
 		BB9D78B727813ED300C71982 /* CustomTextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9D78B627813ED300C71982 /* CustomTextLabel.swift */; };
 		BB9D78B927814F4500C71982 /* OptionEntityCalculationsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9D78B827814F4500C71982 /* OptionEntityCalculationsHelper.swift */; };
+		BB9D78BB2782679300C71982 /* EmptyOptionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9D78BA2782679300C71982 /* EmptyOptionsListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +88,7 @@
 		BB9D78B427813AB000C71982 /* OptionStrategies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionStrategies.swift; sourceTree = "<group>"; };
 		BB9D78B627813ED300C71982 /* CustomTextLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextLabel.swift; sourceTree = "<group>"; };
 		BB9D78B827814F4500C71982 /* OptionEntityCalculationsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionEntityCalculationsHelper.swift; sourceTree = "<group>"; };
+		BB9D78BA2782679300C71982 /* EmptyOptionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyOptionsListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -371,6 +373,7 @@
 			children = (
 				BB0316B62778118800FB108B /* OptionTradeRowView.swift */,
 				BB0316C0277838A800FB108B /* OptionTradeView.swift */,
+				BB9D78BA2782679300C71982 /* EmptyOptionsListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 				BB0316BB2778265400FB108B /* Date.swift in Sources */,
 				BB9D78B12780EB0500C71982 /* ClosePosition.swift in Sources */,
 				BB0316C1277838A800FB108B /* OptionTradeView.swift in Sources */,
+				BB9D78BB2782679300C71982 /* EmptyOptionsListView.swift in Sources */,
 				BB22E1AE277C0CD7005853F2 /* StatisticsViewModel.swift in Sources */,
 				BB0316BF2778292C00FB108B /* Double.swift in Sources */,
 				BB0316BD277827F000FB108B /* Calender.swift in Sources */,

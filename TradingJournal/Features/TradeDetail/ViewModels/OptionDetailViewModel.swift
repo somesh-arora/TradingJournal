@@ -8,30 +8,14 @@
 import Foundation
 import Combine
 
-class OptionDetailViewModel: ObservableObject {
+final class OptionDetailViewModel: ObservableObject {
     
-    @Published var statistics: [StatsModel] = []
-    @Published var optionEntity: OptionEntity
-    
-    private var cancellables = Set<AnyCancellable>()
-    
-    @Published var showClosingTradeView: Bool = false
-    
-    init(optionEntity: OptionEntity) {
-        self.optionEntity = optionEntity
-        self.addSubscribers()
-    }
-    
-    private func addSubscribers() {
-        $optionEntity
-            .map(createStatisticArray)
-            .sink { [weak self] statistics in
-                self?.statistics = statistics
-            }
-            .store(in: &cancellables)
-    }
-    
-    private func createStatisticArray(entity: OptionEntity) -> [StatsModel] {
+    func getStatisticArray(entity: OptionEntity?) -> [StatsModel] {
+        
+        guard let entity = entity else {
+            return []
+        }
+
         var statisticsArray: [StatsModel] = []
         
         if let ticker = entity.stockSymbol {

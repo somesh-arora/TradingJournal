@@ -13,9 +13,10 @@ final class StatisticsViewModel: ObservableObject {
     
     func getProgressData(optionEntities: [OptionEntity]) -> [CircularProgressModel] {
         var circularProgressData: [CircularProgressModel] = []
-        circularProgressData.append(CircularProgressModel(header: "Goal", currentValue: 1200, targetValue: 10000, progressColor: Color.theme.newTrade, footer: "$10,000"))
-        circularProgressData.append(CircularProgressModel(header: "Goal", currentValue: 5000, targetValue: 10000, progressColor: Color.theme.newTrade, footer: "$10,000"))
-        circularProgressData.append(CircularProgressModel(header: "Goal", currentValue: 7200, targetValue: 10000, progressColor: Color.theme.newTrade, footer: "$10,000"))
+        let profit_loss = profit_loss(optionEntities: optionEntities)
+        circularProgressData.append(CircularProgressModel(header: "Goal", subheader: "Target: $10,000", currentValue: profit_loss, targetValue: 10000, progressColor: Color.accentColor, footer: "Current: \(Double(profit_loss).asCurrencyWith2Decimals())"))
+//        circularProgressData.append(CircularProgressModel(header: "Goal", currentValue: 5000, targetValue: 10000, progressColor: Color.theme.newTrade, footer: "$10,000"))
+//        circularProgressData.append(CircularProgressModel(header: "Goal", currentValue: 7200, targetValue: 10000, progressColor: Color.theme.newTrade, footer: "$10,000"))
         return circularProgressData
     }
     
@@ -29,6 +30,12 @@ final class StatisticsViewModel: ObservableObject {
         statsData.append(StatsModel(title: "Biggest Loss", value: self.biggestLoss(optionEntities: optionEntities)))
         statsData.append(StatsModel(title: "Average P/L", value: averagePL(optionEntities: optionEntities)))
         return statsData
+    }
+    
+    private func profit_loss(optionEntities: [OptionEntity]) -> CGFloat {
+        let closedTrades = optionEntities.filter { !$0.isOpen }
+        let profit_loss = closedTrades.map { $0.profit_loss }.reduce(0, +)
+        return CGFloat(profit_loss)
     }
     
     private func totalTrades(optionEntities: [OptionEntity]) -> String {

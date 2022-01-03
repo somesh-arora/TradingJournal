@@ -8,6 +8,13 @@
 import Foundation
 import Combine
 
+/*
+ CRUD Funtions
+ Create
+ Read
+ Update
+ Delete
+ */
 
 final class ManageOptionsViewModel: ObservableObject {
     
